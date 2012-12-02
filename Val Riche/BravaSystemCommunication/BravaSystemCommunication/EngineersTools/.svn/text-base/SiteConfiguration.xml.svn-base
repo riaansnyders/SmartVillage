@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SiteConfiguration>
+	<Site SiteName="Val Riche">
+		<UnitMaps UnitMapCount="3">
+			<UnitMap TCPIPAddress="192.168.1.69"  EthernetMAC="00:04:a3:10:7a:40" UnitIndex="1" SwitchBankType="RESIDENT_8SW" NetworkGatewayType="RESIDENT_ETH"/>
+			<UnitMap TCPIPAddress="192.168.1.200" EthernetMAC="04:13:1f:09:45:99" UnitIndex="2" SwitchBankType="RESIDENT_8SW" NetworkGatewayType="RESIDENT_ETH"/>
+			<UnitMap TCPIPAddress="192.168.1.201" EthernetMAC="04:13:1f:9f:22:67" UnitIndex="2" SwitchBankType="RESIDENT_8SW" NetworkGatewayType="RESIDENT_ETH"/>
+			
+		</UnitMaps>
+	</Site>
+</SiteConfiguration>

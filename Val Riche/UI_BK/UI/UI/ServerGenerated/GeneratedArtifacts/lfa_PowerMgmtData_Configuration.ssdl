@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="lfa_PowerMgmtData_ConfigurationStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="lfa_PowerMgmtData_ConfigurationStore">
+    <EntitySet Name="Device" EntityType="lfa_PowerMgmtData_ConfigurationStore.Configuration_Device" store:Type="Tables" Schema="Configuration" Table="Device" />
+    <EntitySet Name="Unit" EntityType="lfa_PowerMgmtData_ConfigurationStore.Configuration_Unit" store:Type="Tables" Schema="Configuration" Table="Unit" />
+    <EntitySet Name="Zone" EntityType="lfa_PowerMgmtData_ConfigurationStore.Configuration_Zone" store:Type="Tables" Schema="Configuration" Table="Zone" />
+    <AssociationSet Name="Configuration_Unit_Configuration_Device" Association="lfa_PowerMgmtData_ConfigurationStore.Configuration_Unit_Configuration_Device">
+      <End Role="Configuration_Unit" EntitySet="Unit" />
+      <End Role="Configuration_Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="Configuration_Zone_Configuration_Unit" Association="lfa_PowerMgmtData_ConfigurationStore.Configuration_Zone_Configuration_Unit">
+      <End Role="Configuration_Zone" EntitySet="Zone" />
+      <End Role="Configuration_Unit" EntitySet="Unit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Zone" Association="lfa_PowerMgmtData_ConfigurationStore.FK_Device_Zone">
+      <End Role="Zone" EntitySet="Zone" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Configuration_Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Id_Unit" Type="int" Nullable="false" />
+    <Property Name="Id_Zone" Type="int" />
+  </EntityType>
+  <EntityType Name="Configuration_Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Id_Zone" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Configuration_Zone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="Configuration_Unit_Configuration_Device">
+    <End Role="Configuration_Unit" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Unit" Multiplicity="1" />
+    <End Role="Configuration_Device" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuration_Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Configuration_Device">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Configuration_Zone_Configuration_Unit">
+    <End Role="Configuration_Zone" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Zone" Multiplicity="1" />
+    <End Role="Configuration_Unit" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuration_Zone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Configuration_Unit">
+        <PropertyRef Name="Id_Zone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Zone">
+    <End Role="Zone" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Zone" Multiplicity="0..1" />
+    <End Role="Device" Type="lfa_PowerMgmtData_ConfigurationStore.Configuration_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="Id_Zone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

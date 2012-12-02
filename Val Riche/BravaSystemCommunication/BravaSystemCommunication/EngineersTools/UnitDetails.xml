@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UnitDetails>
+	<UnitDetail UnitIndex="1" UnitType="RESIDENT">
+		<UnitName>Villa 1A</UnitName>
+		<OwnerName>Mr. A Placeholder</OwnerName>
+		<StreetAddress>Villa 1, First Street, Val Riche</StreetAddress>
+		<ContactDetails>mailto:aplaceholder@fakemail.com</ContactDetails>
+	</UnitDetail>
+	<UnitDetail UnitIndex="2" UnitType="RESIDENT">
+		<UnitName>Villa 3C</UnitName>
+		<OwnerName>Mrs Not Real </OwnerName>
+		<StreetAddress>Villa 3, Third Street, Val Riche</StreetAddress>
+		<ContactDetails>phone:+115555555</ContactDetails>
+	</UnitDetail>
+</UnitDetails>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="lfa_PowerMgmtData_ScheduleObjectContext" StorageEntityContainer="lfa_PowerMgmtData_ScheduleStore">
+    <EntitySetMapping Name="Schedule_Device">
+      <EntityTypeMapping TypeName="IsTypeOf(lfa_PowerMgmtData_Schedule.Schedule_Device)">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Device" ColumnName="Id_Device" />
+          <ScalarProperty Name="Id_ScheduleUnit" ColumnName="Id_ScheduleUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedule_Schedule">
+      <EntityTypeMapping TypeName="IsTypeOf(lfa_PowerMgmtData_Schedule.Schedule_Schedule)">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ElapseTime" ColumnName="ElapseTime" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedule_Unit">
+      <EntityTypeMapping TypeName="IsTypeOf(lfa_PowerMgmtData_Schedule.Schedule_Unit)">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Unit" ColumnName="Id_Unit" />
+          <ScalarProperty Name="Id_Schedule" ColumnName="Id_Schedule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

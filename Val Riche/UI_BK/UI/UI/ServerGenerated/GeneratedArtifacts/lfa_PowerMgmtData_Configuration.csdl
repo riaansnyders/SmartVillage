@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Namespace="lfa_PowerMgmtData_Configuration" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <Association Name="Configuration_Unit_Configuration_Device">
+    <End Role="Configuration_Unit" Type="lfa_PowerMgmtData_Configuration.Configuration_Unit" Multiplicity="1" />
+    <End Role="Configuration_Device" Type="lfa_PowerMgmtData_Configuration.Configuration_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuration_Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Configuration_Device">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Configuration_Zone_Configuration_Unit">
+    <End Role="Configuration_Zone" Type="lfa_PowerMgmtData_Configuration.Configuration_Zone" Multiplicity="1" />
+    <End Role="Configuration_Unit" Type="lfa_PowerMgmtData_Configuration.Configuration_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Configuration_Zone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Configuration_Unit">
+        <PropertyRef Name="Id_Zone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Zone">
+    <End Role="Zone" Type="lfa_PowerMgmtData_Configuration.Configuration_Zone" Multiplicity="0..1" />
+    <End Role="Device" Type="lfa_PowerMgmtData_Configuration.Configuration_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="Id_Zone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Configuration_Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Unit" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Zone" Type="Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Configuration_Unit" Relationship="lfa_PowerMgmtData_Configuration.Configuration_Unit_Configuration_Device" ToRole="Configuration_Unit" FromRole="Configuration_Device" />
+    <NavigationProperty Name="Zone" Relationship="lfa_PowerMgmtData_Configuration.FK_Device_Zone" ToRole="Zone" FromRole="Device" />
+  </EntityType>
+  <EntityType Name="Configuration_Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Zone" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Configuration_Device" Relationship="lfa_PowerMgmtData_Configuration.Configuration_Unit_Configuration_Device" ToRole="Configuration_Device" FromRole="Configuration_Unit" />
+    <NavigationProperty Name="Configuration_Zone" Relationship="lfa_PowerMgmtData_Configuration.Configuration_Zone_Configuration_Unit" ToRole="Configuration_Zone" FromRole="Configuration_Unit" />
+  </EntityType>
+  <EntityType Name="Configuration_Zone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Configuration_Unit" Relationship="lfa_PowerMgmtData_Configuration.Configuration_Zone_Configuration_Unit" ToRole="Configuration_Unit" FromRole="Configuration_Zone" />
+    <NavigationProperty Name="Devices" Relationship="lfa_PowerMgmtData_Configuration.FK_Device_Zone" ToRole="Device" FromRole="Zone" />
+  </EntityType>
+  <EntityContainer Name="lfa_PowerMgmtData_ConfigurationObjectContext">
+    <EntitySet Name="Configuration_Devices" EntityType="lfa_PowerMgmtData_Configuration.Configuration_Device" />
+    <EntitySet Name="Configuration_Unit" EntityType="lfa_PowerMgmtData_Configuration.Configuration_Unit" />
+    <EntitySet Name="Configuration_Zones" EntityType="lfa_PowerMgmtData_Configuration.Configuration_Zone" />
+    <AssociationSet Name="Configuration_Unit_Configuration_Device" Association="lfa_PowerMgmtData_Configuration.Configuration_Unit_Configuration_Device">
+      <End Role="Configuration_Unit" EntitySet="Configuration_Unit" />
+      <End Role="Configuration_Device" EntitySet="Configuration_Devices" />
+    </AssociationSet>
+    <AssociationSet Name="Configuration_Zone_Configuration_Unit" Association="lfa_PowerMgmtData_Configuration.Configuration_Zone_Configuration_Unit">
+      <End Role="Configuration_Zone" EntitySet="Configuration_Zones" />
+      <End Role="Configuration_Unit" EntitySet="Configuration_Unit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Zone" Association="lfa_PowerMgmtData_Configuration.FK_Device_Zone">
+      <End Role="Zone" EntitySet="Configuration_Zones" />
+      <End Role="Device" EntitySet="Configuration_Devices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

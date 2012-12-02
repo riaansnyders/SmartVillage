@@ -1,0 +1,13 @@
+FMSProtocol DEFINITIONS ::= BEGIN
+FMSRequest ::= SEQUENCE {
+ ReqID INTEGER,
+ Request VisibleString
+
+}
+
+FMSResponse ::= SEQUENCE {
+ ResID INTEGER,
+ Response VisibleString
+
+}
+END

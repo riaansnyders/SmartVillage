@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction xmlns="BravaSystem.Communication">
+	<Response>
+		<Header Task="3" Function="5" RecordType="3" RecordIndex="0" />
+		<Data RecordCount="5">
+			<Record RecordID="1" MACAddress="00-04-A3-10-7A-40" IPAddress="C0-A8-01-45" TimeStamp="27836480" />
+			<Record RecordID="2" SerialNumber="30-31-32-33-34-35-36-37-38-39" />
+			<Record RecordID="3" UTCTime="F7-DD-AD-15" />
+			<Record RecordID="4" UserString="56-61-6C-20-52-69-63-68-65-20-42-72-61-76-61-08" />
+			<Record RecordID="8" Circuit1State="Disconnected" Circuit2State="Disconnected" Circuit3State="Disconnected" Circuit4State="Disconnected" Circuit5State="Disconnected" Circuit6State="Disconnected" Circuit7State="Disconnected" Circuit8State="Disconnected" />
+		</Data>
+	</Response>
+</Transaction>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Namespace="lfa_PowerMgmtData" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <Association Name="FK_Device_Device">
+    <End Role="Device" Type="lfa_PowerMgmtData.Device" Multiplicity="1" />
+    <End Role="Device1" Type="lfa_PowerMgmtData.Device1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device1">
+        <PropertyRef Name="Id_Device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Unit">
+    <End Role="Unit" Type="lfa_PowerMgmtData.Unit" Multiplicity="1" />
+    <End Role="Device" Type="lfa_PowerMgmtData.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Unit1">
+    <End Role="Unit1" Type="lfa_PowerMgmtData.Unit1Item" Multiplicity="0..1" />
+    <End Role="Device1" Type="lfa_PowerMgmtData.Device1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device1">
+        <PropertyRef Name="Id_ScheduleUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Unit_Unit">
+    <End Role="Unit" Type="lfa_PowerMgmtData.Unit" Multiplicity="1" />
+    <End Role="Unit1" Type="lfa_PowerMgmtData.Unit1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Unit1">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Unit" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Device1" Relationship="lfa_PowerMgmtData.FK_Device_Device" ToRole="Device1" FromRole="Device" />
+    <NavigationProperty Name="Unit" Relationship="lfa_PowerMgmtData.FK_Device_Unit" ToRole="Unit" FromRole="Device" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Zone" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Devices" Relationship="lfa_PowerMgmtData.FK_Device_Unit" ToRole="Device" FromRole="Unit" />
+    <NavigationProperty Name="Unit1" Relationship="lfa_PowerMgmtData.FK_Unit_Unit" ToRole="Unit1" FromRole="Unit" />
+  </EntityType>
+  <EntityType Name="Device1Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Device" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_ScheduleUnit" Type="Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Device" Relationship="lfa_PowerMgmtData.FK_Device_Device" ToRole="Device" FromRole="Device1" />
+    <NavigationProperty Name="Unit1Item" Relationship="lfa_PowerMgmtData.FK_Device_Unit1" ToRole="Unit1" FromRole="Device1" />
+  </EntityType>
+  <EntityType Name="Unit1Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Schedule" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Unit" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Device1" Relationship="lfa_PowerMgmtData.FK_Device_Unit1" ToRole="Device1" FromRole="Unit1" />
+    <NavigationProperty Name="Unit" Relationship="lfa_PowerMgmtData.FK_Unit_Unit" ToRole="Unit" FromRole="Unit1" />
+  </EntityType>
+  <EntityContainer Name="lfa_PowerMgmtDataObjectContext">
+    <EntitySet Name="Devices" EntityType="lfa_PowerMgmtData.Device" />
+    <EntitySet Name="Units" EntityType="lfa_PowerMgmtData.Unit" />
+    <EntitySet Name="Device1" EntityType="lfa_PowerMgmtData.Device1Item" />
+    <EntitySet Name="Unit1" EntityType="lfa_PowerMgmtData.Unit1Item" />
+    <AssociationSet Name="FK_Device_Device" Association="lfa_PowerMgmtData.FK_Device_Device">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Device1" EntitySet="Device1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Unit" Association="lfa_PowerMgmtData.FK_Device_Unit">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Unit1" Association="lfa_PowerMgmtData.FK_Device_Unit1">
+      <End Role="Unit1" EntitySet="Unit1" />
+      <End Role="Device1" EntitySet="Device1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Unit_Unit" Association="lfa_PowerMgmtData.FK_Unit_Unit">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Unit1" EntitySet="Unit1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction xmlns="BravaSystem.Communication">
+	<Response>
+		<Header Task="3" Function="5" RecordType="1" RecordIndex="0" />
+		<Data RecordCount="1">
+			<Record BravaType="42-52-41-56-41-23" MACAddress="00-04-A3-10-7A-40" />
+		</Data>
+	</Response>
+</Transaction>

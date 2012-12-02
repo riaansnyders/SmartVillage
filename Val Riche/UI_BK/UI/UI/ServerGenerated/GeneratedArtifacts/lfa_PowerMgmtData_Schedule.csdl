@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Namespace="lfa_PowerMgmtData_Schedule" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <Association Name="Schedule_Unit_Schedule_Device">
+    <End Role="Schedule_Unit" Type="lfa_PowerMgmtData_Schedule.Schedule_Unit" Multiplicity="0..1" />
+    <End Role="Schedule_Device" Type="lfa_PowerMgmtData_Schedule.Schedule_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule_Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Schedule_Device">
+        <PropertyRef Name="Id_ScheduleUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Schedule_Schedule_Schedule_Unit">
+    <End Role="Schedule_Schedule" Type="lfa_PowerMgmtData_Schedule.Schedule_Schedule" Multiplicity="1" />
+    <End Role="Schedule_Unit" Type="lfa_PowerMgmtData_Schedule.Schedule_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule_Schedule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Schedule_Unit">
+        <PropertyRef Name="Id_Schedule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Schedule_Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Device" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_ScheduleUnit" Type="Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Schedule_Unit" Relationship="lfa_PowerMgmtData_Schedule.Schedule_Unit_Schedule_Device" ToRole="Schedule_Unit" FromRole="Schedule_Device" />
+  </EntityType>
+  <EntityType Name="Schedule_Schedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="StartTime" Type="String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="EndTime" Type="String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="ElapseTime" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="IsActive" Type="Boolean" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Schedule_Unit" Relationship="lfa_PowerMgmtData_Schedule.Schedule_Schedule_Schedule_Unit" ToRole="Schedule_Unit" FromRole="Schedule_Schedule" />
+  </EntityType>
+  <EntityType Name="Schedule_Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Unit" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Id_Schedule" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Schedule_Device" Relationship="lfa_PowerMgmtData_Schedule.Schedule_Unit_Schedule_Device" ToRole="Schedule_Device" FromRole="Schedule_Unit" />
+    <NavigationProperty Name="Schedule_Schedule" Relationship="lfa_PowerMgmtData_Schedule.Schedule_Schedule_Schedule_Unit" ToRole="Schedule_Schedule" FromRole="Schedule_Unit" />
+  </EntityType>
+  <EntityContainer Name="lfa_PowerMgmtData_ScheduleObjectContext">
+    <EntitySet Name="Schedule_Device" EntityType="lfa_PowerMgmtData_Schedule.Schedule_Device" />
+    <EntitySet Name="Schedule_Schedule" EntityType="lfa_PowerMgmtData_Schedule.Schedule_Schedule" />
+    <EntitySet Name="Schedule_Unit" EntityType="lfa_PowerMgmtData_Schedule.Schedule_Unit" />
+    <AssociationSet Name="Schedule_Unit_Schedule_Device" Association="lfa_PowerMgmtData_Schedule.Schedule_Unit_Schedule_Device">
+      <End Role="Schedule_Unit" EntitySet="Schedule_Unit" />
+      <End Role="Schedule_Device" EntitySet="Schedule_Device" />
+    </AssociationSet>
+    <AssociationSet Name="Schedule_Schedule_Schedule_Unit" Association="lfa_PowerMgmtData_Schedule.Schedule_Schedule_Schedule_Unit">
+      <End Role="Schedule_Schedule" EntitySet="Schedule_Schedule" />
+      <End Role="Schedule_Unit" EntitySet="Schedule_Unit" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="lfa_PowerMgmtData_ScheduleStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="lfa_PowerMgmtData_ScheduleStore">
+    <EntitySet Name="Device" EntityType="lfa_PowerMgmtData_ScheduleStore.Schedule_Device" store:Type="Tables" Schema="Schedule" Table="Device" />
+    <EntitySet Name="Schedule" EntityType="lfa_PowerMgmtData_ScheduleStore.Schedule_Schedule" store:Type="Tables" Schema="Schedule" Table="Schedule" />
+    <EntitySet Name="Unit" EntityType="lfa_PowerMgmtData_ScheduleStore.Schedule_Unit" store:Type="Tables" Schema="Schedule" Table="Unit" />
+    <AssociationSet Name="Schedule_Unit_Schedule_Device" Association="lfa_PowerMgmtData_ScheduleStore.Schedule_Unit_Schedule_Device">
+      <End Role="Schedule_Unit" EntitySet="Unit" />
+      <End Role="Schedule_Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="Schedule_Schedule_Schedule_Unit" Association="lfa_PowerMgmtData_ScheduleStore.Schedule_Schedule_Schedule_Unit">
+      <End Role="Schedule_Schedule" EntitySet="Schedule" />
+      <End Role="Schedule_Unit" EntitySet="Unit" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Schedule_Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Device" Type="int" Nullable="false" />
+    <Property Name="Id_ScheduleUnit" Type="int" />
+  </EntityType>
+  <EntityType Name="Schedule_Schedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="StartTime" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="EndTime" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="ElapseTime" Type="int" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Schedule_Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Unit" Type="int" Nullable="false" />
+    <Property Name="Id_Schedule" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Schedule_Unit_Schedule_Device">
+    <End Role="Schedule_Unit" Type="lfa_PowerMgmtData_ScheduleStore.Schedule_Unit" Multiplicity="0..1" />
+    <End Role="Schedule_Device" Type="lfa_PowerMgmtData_ScheduleStore.Schedule_Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule_Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Schedule_Device">
+        <PropertyRef Name="Id_ScheduleUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Schedule_Schedule_Schedule_Unit">
+    <End Role="Schedule_Schedule" Type="lfa_PowerMgmtData_ScheduleStore.Schedule_Schedule" Multiplicity="1" />
+    <End Role="Schedule_Unit" Type="lfa_PowerMgmtData_ScheduleStore.Schedule_Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule_Schedule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Schedule_Unit">
+        <PropertyRef Name="Id_Schedule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

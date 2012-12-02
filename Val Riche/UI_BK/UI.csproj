@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CD2935A-09EC-40B9-A2FC-858E5DD925FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lfa.pmgmt.ui</RootNamespace>
+    <AssemblyName>ManagementConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Forms\Images\Main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BravaConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\BravaConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="BravaSocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\BravaSocket.dll</HintPath>
+    </Reference>
+    <Reference Include="BravaTransaction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\BravaTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="BravaUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\BravaUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ComboItem.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Forms\Frm_Manage_SignalBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_SignalBoard.Designer.cs">
+      <DependentUpon>Frm_Manage_SignalBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Log.Designer.cs">
+      <DependentUpon>Frm_Manage_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Priority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Priority.Designer.cs">
+      <DependentUpon>Frm_Manage_Priority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Copy_Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Copy_Unit.Designer.cs">
+      <DependentUpon>Frm_Copy_Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Link_Zone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Link_Zone.Designer.cs">
+      <DependentUpon>Frm_Link_Zone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Load.Designer.cs">
+      <DependentUpon>Frm_Manage_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Manage_Rules.Designer.cs">
+      <DependentUpon>Frm_Manage_Rules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_RuleSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_RuleSet.Designer.cs">
+      <DependentUpon>Frm_AddNew_RuleSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_ScheduleDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_ScheduleDevice.Designer.cs">
+      <DependentUpon>Frm_AddNew_ScheduleDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_ScheduleUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_ScheduleUnit.Designer.cs">
+      <DependentUpon>Frm_AddNew_ScheduleUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Schedule.Designer.cs">
+      <DependentUpon>Frm_AddNew_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Device.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Device.Designer.cs">
+      <DependentUpon>Frm_AddNew_Device.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Unit.Designer.cs">
+      <DependentUpon>Frm_AddNew_Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Zone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddNew_Zone.Designer.cs">
+      <DependentUpon>Frm_AddNew_Zone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Frm_Manage_SignalBoard.resx">
+      <DependentUpon>Frm_Manage_SignalBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Manage_Log.resx">
+      <DependentUpon>Frm_Manage_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Manage_Priority.resx">
+      <DependentUpon>Frm_Manage_Priority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Copy_Unit.resx">
+      <DependentUpon>Frm_Copy_Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Link_Zone.resx">
+      <DependentUpon>Frm_Link_Zone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Manage_Load.resx">
+      <DependentUpon>Frm_Manage_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Manage_Rules.resx">
+      <DependentUpon>Frm_Manage_Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_RuleSet.resx">
+      <DependentUpon>Frm_AddNew_RuleSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_ScheduleDevice.resx">
+      <DependentUpon>Frm_AddNew_ScheduleDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_ScheduleUnit.resx">
+      <DependentUpon>Frm_AddNew_ScheduleUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_Schedule.resx">
+      <DependentUpon>Frm_AddNew_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_Device.resx">
+      <DependentUpon>Frm_AddNew_Device.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_Unit.resx">
+      <DependentUpon>Frm_AddNew_Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AddNew_Zone.resx">
+      <DependentUpon>Frm_AddNew_Zone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Images\add-file-256x256.png" />
+    <None Include="Images\OKShield-256x256.png" />
+    <None Include="Images\Button-Turn-Off-icon.png" />
+    <None Include="Images\Button-Turn-On-icon.png" />
+    <None Include="Images\Actions-button-cancel-icon.png" />
+    <None Include="Images\edit_add.png" />
+    <None Include="Images\file-system-icon.png" />
+    <None Include="Images\Actions-document-edit-icon.png" />
+    <None Include="Images\File-New-icon.png" />
+    <None Include="Images\link.png" />
+    <None Include="Images\Copy.png" />
+    <None Include="Images\Refresh_small.png" />
+    <Content Include="Val Riche Power Management Console.lnk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\Images\add-file-256x256.png" />
+    <None Include="Forms\Images\Control Panel.ico" />
+    <None Include="Forms\Images\add.ico" />
+    <None Include="Forms\Images\Add Green Button Icon.jpg" />
+    <None Include="Forms\Images\button_header_add_user.gif" />
+    <None Include="Forms\Images\Main.ico" />
+    <None Include="Forms\Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{6F3EA3B4-1BF7-4601-9790-77AF5224D108}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

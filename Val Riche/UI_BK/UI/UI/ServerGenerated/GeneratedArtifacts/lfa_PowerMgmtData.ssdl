@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="lfa_PowerMgmtDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="lfa_PowerMgmtDataStore">
+    <EntitySet Name="Device" EntityType="lfa_PowerMgmtDataStore.Device" store:Type="Tables" Schema="Configuration" Table="Device" />
+    <EntitySet Name="Unit" EntityType="lfa_PowerMgmtDataStore.Unit" store:Type="Tables" Schema="Configuration" Table="Unit" />
+    <EntitySet Name="Device" EntityType="lfa_PowerMgmtDataStore.Device1Item" store:Type="Tables" Schema="Schedule" Table="Device" />
+    <EntitySet Name="Unit" EntityType="lfa_PowerMgmtDataStore.Unit1Item" store:Type="Tables" Schema="Schedule" Table="Unit" />
+    <AssociationSet Name="FK_Device_Device" Association="lfa_PowerMgmtDataStore.FK_Device_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="Device1" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Unit" Association="lfa_PowerMgmtDataStore.FK_Device_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Unit1" Association="lfa_PowerMgmtDataStore.FK_Device_Unit1">
+      <End Role="Unit1" EntitySet="Unit" />
+      <End Role="Device1" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Unit_Unit" Association="lfa_PowerMgmtDataStore.FK_Unit_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Unit1" EntitySet="Unit" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Id_Unit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Zone" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Device1Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Device" Type="int" Nullable="false" />
+    <Property Name="Id_ScheduleUnit" Type="int" />
+  </EntityType>
+  <EntityType Name="Unit1Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Schedule" Type="int" Nullable="false" />
+    <Property Name="Id_Unit" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Device_Device">
+    <End Role="Device" Type="lfa_PowerMgmtDataStore.Device" Multiplicity="1" />
+    <End Role="Device1" Type="lfa_PowerMgmtDataStore.Device1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device1">
+        <PropertyRef Name="Id_Device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Unit">
+    <End Role="Unit" Type="lfa_PowerMgmtDataStore.Unit" Multiplicity="1" />
+    <End Role="Device" Type="lfa_PowerMgmtDataStore.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Unit1">
+    <End Role="Unit1" Type="lfa_PowerMgmtDataStore.Unit1Item" Multiplicity="0..1" />
+    <End Role="Device1" Type="lfa_PowerMgmtDataStore.Device1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Device1">
+        <PropertyRef Name="Id_ScheduleUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Unit_Unit">
+    <End Role="Unit" Type="lfa_PowerMgmtDataStore.Unit" Multiplicity="1" />
+    <End Role="Unit1" Type="lfa_PowerMgmtDataStore.Unit1Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Unit1">
+        <PropertyRef Name="Id_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

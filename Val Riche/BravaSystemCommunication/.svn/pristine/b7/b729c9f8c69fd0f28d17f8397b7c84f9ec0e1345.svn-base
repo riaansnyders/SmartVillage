@@ -1,0 +1,400 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Xml;
+using System.Windows.Forms;
+using BravaSystem.Communication;
+
+namespace TestApplication
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            RequestType myRequest = new RequestType();
+
+            BravaSocket mySocket = new BravaSocket(myRequest, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+                myRequest.ParseResultStream();
+
+                MessageBox.Show(myRequest.ResultXML.OuterXml);
+
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+
+
+
+
+        }
+
+        private void btnReadingRq_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            RequestReadings myRequest = new RequestReadings();
+
+            BravaSocket mySocket = new BravaSocket(myRequest, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+                myRequest.ParseResultStream();
+
+                MessageBox.Show(myRequest.ResultXML.OuterXml);
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+        }
+
+        private void btnTypeSampleXML_Click(object sender, EventArgs e)
+        {
+            System.IO.MemoryStream _xmlMemStr = new System.IO.MemoryStream();
+
+            XmlTextWriter writer = new XmlTextWriter(_xmlMemStr, Encoding.UTF8);
+            //XmlTextWriter writer = new XmlTextWriter(@"C:\Work\Source\Brava\Temp\BravaTypeSample.xml", Encoding.UTF8);
+            writer.Formatting = Formatting.Indented;
+
+            writer.WriteStartDocument();
+            writer.WriteStartElement("Transaction", "BravaSystem.Communication");
+            writer.WriteStartElement("Response");
+            writer.WriteStartElement("Header");
+            writer.WriteAttributeString("TASK", XmlConvert.ToString(0x03));
+            writer.WriteAttributeString("FUNCTION", XmlConvert.ToString(0x05));
+            writer.WriteAttributeString("RecordType", XmlConvert.ToString(0x01));
+            writer.WriteAttributeString("RecordIndex", XmlConvert.ToString(0x00));
+            writer.WriteEndElement();  // End "Header"
+
+            writer.WriteStartElement("Data");
+            writer.WriteAttributeString("RecordCount", XmlConvert.ToString(0x01));
+            writer.WriteStartElement("Record");
+            writer.WriteAttributeString("BravaType", "BRAVA");
+            writer.WriteAttributeString("Version", "#1");
+            writer.WriteEndElement(); // End "Record"
+
+            writer.WriteEndElement(); // End "Data"
+
+            writer.WriteEndElement(); // End "Response"
+
+            writer.WriteEndElement(); // End "Transaction"
+
+            writer.WriteEndDocument();
+
+            writer.Flush();
+
+            System.Xml.XmlDocument myXmlDoc = new XmlDocument();
+            _xmlMemStr.Seek(0, System.IO.SeekOrigin.Begin);
+            myXmlDoc.Load(_xmlMemStr);
+
+            writer.Close();
+
+            MessageBox.Show(myXmlDoc.OuterXml);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            DisplayText myTextDisply = new DisplayText(textBox1.Text, (byte)numericUpDown1.Value);
+
+            BravaSocket mySocket = new BravaSocket(myTextDisply, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            DisplayText myTextDisply = new DisplayText("\0", (byte)numericUpDown1.Value);
+
+            BravaSocket mySocket = new BravaSocket(myTextDisply, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+        }
+
+        private void btnConnectSw_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            ConnectSwitch myConnectSwitch = new ConnectSwitch(0, 0, 0);
+
+            if(radioButton1.Checked)
+                myConnectSwitch = new ConnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit1,0,0);
+
+            if (radioButton2.Checked)
+                myConnectSwitch = new ConnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit2, 0, 0);
+
+            if (radioButton3.Checked)
+                myConnectSwitch = new ConnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit3, 0, 0);
+
+            if (radioButton4.Checked)
+                myConnectSwitch = new ConnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit4, 0, 0);
+
+            BravaSocket mySocket = new BravaSocket(myConnectSwitch, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+        }
+
+        private void btnDisconnectSw_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            DisconnectSwitch myDisconnectSwitch = new DisconnectSwitch(0,0,0);
+
+            if (radioButton1.Checked)
+                myDisconnectSwitch = new DisconnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit1, 0, 0);
+
+            if (radioButton2.Checked)
+                myDisconnectSwitch = new DisconnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit2, 0, 0);
+
+            if (radioButton3.Checked)
+                myDisconnectSwitch = new DisconnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit3, 0, 0);
+
+            if (radioButton4.Checked)
+                myDisconnectSwitch = new DisconnectSwitch((byte)BravaCodes.LoadSwitchCircuits.Circuit4, 0, 0);
+
+            BravaSocket mySocket = new BravaSocket(myDisconnectSwitch, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            BravaCodes.SwitchState[] mySwitchStates = new BravaCodes.SwitchState[8];
+
+            for (int x = 0; x <= 7; x++) mySwitchStates[x] = BravaCodes.SwitchState.SwitchOff;
+            
+            if (checkBox1.Checked)
+                mySwitchStates[0] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox2.Checked)
+                mySwitchStates[1] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox3.Checked)
+                mySwitchStates[2] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox4.Checked)
+                mySwitchStates[3] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox5.Checked)
+                mySwitchStates[4] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox6.Checked)
+                mySwitchStates[5] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox7.Checked)
+                mySwitchStates[6] = BravaCodes.SwitchState.SwitchOn;
+            if (checkBox8.Checked)
+                mySwitchStates[7] = BravaCodes.SwitchState.SwitchOn;
+
+            SwitchbankUpdate mySwitchbankUpdate = new SwitchbankUpdate(
+                mySwitchStates[0],
+                mySwitchStates[1],
+                mySwitchStates[2],
+                mySwitchStates[3],
+                mySwitchStates[4],
+                mySwitchStates[5],
+                mySwitchStates[6],
+                mySwitchStates[7]);
+
+            BravaSocket mySocket = new BravaSocket(mySwitchbankUpdate, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+        }
+
+        private void btnGetStateBlock_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            RequestStateBlock myRequest = new RequestStateBlock();
+
+            BravaSocket mySocket = new BravaSocket(myRequest, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+
+                myRequest.ParseResultStream();
+
+                MessageBox.Show(myRequest.ResultXML.OuterXml);
+
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BravaConnection myConnection = new BravaConnection();
+
+            myConnection.BravaIP = System.Net.IPAddress.Parse(txtIPAddr.Text);
+
+            myConnection.BravaPort = Int16.Parse(txtIPPort.Text);
+
+            System.Net.IPHostEntry myIPs = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+
+            ConfigureAlertMessageRoute myConfigureAlertRouting = new ConfigureAlertMessageRoute((byte)numRouteRuleNum.Value, myIPs.AddressList[0], Int16.Parse(txtAlertPortNum.Text));
+
+            BravaSocket mySocket = new BravaSocket(myConfigureAlertRouting, myConnection);
+
+            try
+            {
+                mySocket.OpenConnection();
+
+                mySocket.DoTransaction();
+
+                myConnection.rqStream.Close();
+            }
+            catch (Exception)
+            {
+                mySocket.SocketClient.Close();
+                throw;
+            }
+        }
+
+    }
+}

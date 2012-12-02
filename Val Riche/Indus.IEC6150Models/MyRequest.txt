@@ -1,0 +1,7 @@
+myrequest FMSRequest ::= {
+ ReqID 1,
+ Request "Connect me"
+}
+
+
+30 13 02 01 01 1a 0b 
