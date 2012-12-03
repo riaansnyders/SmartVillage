@@ -313,7 +313,7 @@
 
                 BravaCodes.SwitchState[] mySwitchStates = new BravaCodes.SwitchState[8];
 
-                for (int x = 0; x <= 7; x++) mySwitchStates[x] = BravaCodes.SwitchState.NoChange;
+                for (int x = 0; x <= 7; x++) mySwitchStates[x] = BravaCodes.SwitchState.SwitchOff;
 
                 foreach (lfa.pmgmt.data.DTO.Schedule.Device unitDevice in unitDevices)
                 {
@@ -394,7 +394,7 @@
 
                 BravaCodes.SwitchState[] mySwitchStates = new BravaCodes.SwitchState[8];
 
-                for (int x = 0; x <= 7; x++) mySwitchStates[x] = BravaCodes.SwitchState.NoChange;
+                for (int x = 0; x <= 7; x++) mySwitchStates[x] = BravaCodes.SwitchState.SwitchOff;
                 
                 foreach (lfa.pmgmt.data.DTO.Schedule.Device unitDevice in unitDevices)
                 {
