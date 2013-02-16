@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="86955c84-4a5c-4090-9a25-f4bb31bd9141"
+  name="MX_BRAVA_Cloud" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="16d71302-6b7e-4609-9b31-857a51168a74"
+        name="User"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="067bffa9-e2a9-4b0e-9281-fb50db8a7331">
+            <useCaseMoniker
+              Id="08ec5fb9-f385-4baa-a0b1-a52026af0797"
+              LastKnownName="Notifications / Reports"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="e5587dde-a4b4-44ac-a8a2-2405930b347c">
+            <useCaseMoniker
+              Id="ed3187c2-0cbb-48d0-9d7e-a3e8f8ab0bfd"
+              LastKnownName="Enable / Disable Schedule"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="c091a52f-e06d-4d0c-930d-877c123208a0">
+            <useCaseMoniker
+              Id="4fcc5628-336d-48dd-9407-36c3fc4e6f92"
+              LastKnownName="Switches On / Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="47f1098a-f501-41f9-b582-978930e546cb">
+            <useCaseMoniker
+              Id="631e87db-fd3d-407f-b3d2-06e8cc68ec8d"
+              LastKnownName="Zones On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="28f17f74-4787-4e9a-9474-370449201327">
+            <useCaseMoniker
+              Id="92fb041d-b118-4a3f-b280-0c0973bad558"
+              LastKnownName="Devices On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="d86a4183-6d89-4d7a-a286-a7f38995f350">
+            <useCaseMoniker
+              Id="d0887c7e-7343-499f-a540-33fa3966ca60"
+              LastKnownName="Login"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="8dfd8d38-2a5a-420f-affd-bd300def9fb3">
+            <useCaseMoniker
+              Id="14432319-ebae-4e6c-a79d-b5edadbb38e7"
+              LastKnownName="Logout"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6997dc4e-517d-4006-9c37-ca1aec3c2bc8"
+        name="Super User"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="9ad6a2be-1523-4645-a2da-22f84eacc344">
+            <useCaseMoniker
+              Id="08ec5fb9-f385-4baa-a0b1-a52026af0797"
+              LastKnownName="Notifications / Reports"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="d0888b69-c629-474a-bc30-9860a5528a09">
+            <useCaseMoniker
+              Id="d0887c7e-7343-499f-a540-33fa3966ca60"
+              LastKnownName="Login"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="6a9c7217-1bef-4b54-98b2-f9a42718716d">
+            <useCaseMoniker
+              Id="14432319-ebae-4e6c-a79d-b5edadbb38e7"
+              LastKnownName="Logout"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="11d29523-258b-44e7-a47c-c9b4e0877646">
+            <useCaseMoniker
+              Id="ed3187c2-0cbb-48d0-9d7e-a3e8f8ab0bfd"
+              LastKnownName="Enable / Disable Schedule"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="1663518d-618e-465b-a6b5-8172cb762857">
+            <useCaseMoniker
+              Id="4fcc5628-336d-48dd-9407-36c3fc4e6f92"
+              LastKnownName="Switches On / Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="8c739fe2-a9d8-4451-b8f0-21bc38a20d6f">
+            <useCaseMoniker
+              Id="631e87db-fd3d-407f-b3d2-06e8cc68ec8d"
+              LastKnownName="Zones On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="f127e8f2-1a0a-49fd-a262-8e6f8fc9c71e">
+            <useCaseMoniker
+              Id="92fb041d-b118-4a3f-b280-0c0973bad558"
+              LastKnownName="Devices On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="0c4f3266-c4e8-4c15-9e92-6da69af10578">
+            <useCaseMoniker
+              Id="c5230335-9411-4a9f-a7c7-1ede02a707f0"
+              LastKnownName="Manage Users"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="22661a19-1186-4850-857e-5d64b82078f4">
+            <useCaseMoniker
+              Id="ddd44c8d-792b-4cee-888f-c5b10c7e95b0"
+              LastKnownName="Manage Schedules"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="ef8051f8-d6da-4a8d-8c6f-6f604cb54ae0">
+            <useCaseMoniker
+              Id="8128030b-2568-44e1-9622-f8f1ffdc1e1c"
+              LastKnownName="Link / Unlink Schedule to Priority"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="7ba7bf65-d038-43e8-b709-c3cfc4b41f3f">
+            <useCaseMoniker
+              Id="2b82e0e9-2185-4f09-8a2d-368f62034c18"
+              LastKnownName="Manage Zones"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="a501e6f9-acde-41cc-919c-49095297af1d">
+            <useCaseMoniker
+              Id="660fe82f-9c62-451e-87dc-ba2c1373a3da"
+              LastKnownName="Manage Devices"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="0f7c66f8-612d-4756-bce8-60cf6b29d079">
+            <useCaseMoniker
+              Id="2db792a3-9425-4889-a2cc-7eaa4a02ba71"
+              LastKnownName="Manage Switches"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="1d0c3f25-c174-4a04-aed7-72d39485647c">
+            <useCaseMoniker
+              Id="8efbdee7-0744-4af6-9330-dc6046e60986"
+              LastKnownName="Link / Unlink Device to Schedule"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="6fd48d3f-9f68-44c6-b53a-aa35b2b9a029">
+            <useCaseMoniker
+              Id="6361d4eb-4f3c-4966-b5cc-ec13a0bdfe72"
+              LastKnownName="Link / Unlink Device to Zone"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="85d5cefb-2c37-4f0d-b3bd-d69b953e8f21">
+            <useCaseMoniker
+              Id="06bdc6fc-f929-4849-a8cc-7c8856529be1"
+              LastKnownName="Manage Priorities "
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="22c158e5-deb7-4643-a5fc-ee53d056756f"
+        name="System Administrator"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d5b343ec-5d43-40d7-b725-0e7c6d2b20bf">
+            <useCaseMoniker
+              Id="c5230335-9411-4a9f-a7c7-1ede02a707f0"
+              LastKnownName="Manage Users"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="48859da1-de49-4261-b27f-e5ae1ebc5836">
+            <useCaseMoniker
+              Id="d0887c7e-7343-499f-a540-33fa3966ca60"
+              LastKnownName="Login"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="7726ff69-294e-41e3-a565-0a81a5fa8b1a">
+            <useCaseMoniker
+              Id="14432319-ebae-4e6c-a79d-b5edadbb38e7"
+              LastKnownName="Logout"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="01701681-a2f0-45a3-8f98-394ef4b9a71f">
+            <useCaseMoniker
+              Id="ed3187c2-0cbb-48d0-9d7e-a3e8f8ab0bfd"
+              LastKnownName="Enable / Disable Schedule"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="6f555fcb-c9e3-4a86-92b6-d0157c064e39">
+            <useCaseMoniker
+              Id="4fcc5628-336d-48dd-9407-36c3fc4e6f92"
+              LastKnownName="Switches On / Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="722c3f9b-7bfd-4c8c-9127-4a005aa719ec">
+            <useCaseMoniker
+              Id="631e87db-fd3d-407f-b3d2-06e8cc68ec8d"
+              LastKnownName="Zones On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="5c492a13-ccb6-4a4c-adf4-72a25acaf260">
+            <useCaseMoniker
+              Id="92fb041d-b118-4a3f-b280-0c0973bad558"
+              LastKnownName="Devices On/Off"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="767a55de-1999-4128-a61b-b45086c226ff">
+            <useCaseMoniker
+              Id="08ec5fb9-f385-4baa-a0b1-a52026af0797"
+              LastKnownName="Notifications / Reports"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="6629a627-fa46-4627-8705-f789094180aa">
+            <useCaseMoniker
+              Id="865cf1ea-804e-4f32-82ba-a920c9d7a218"
+              LastKnownName="Manage Accounts"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="08ec5fb9-f385-4baa-a0b1-a52026af0797"
+        name="Notifications / Reports"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ed3187c2-0cbb-48d0-9d7e-a3e8f8ab0bfd"
+        name="Enable / Disable Schedule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4fcc5628-336d-48dd-9407-36c3fc4e6f92"
+        name="Switches On / Off"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="631e87db-fd3d-407f-b3d2-06e8cc68ec8d"
+        name="Zones On/Off"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="92fb041d-b118-4a3f-b280-0c0973bad558"
+        name="Devices On/Off"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d0887c7e-7343-499f-a540-33fa3966ca60"
+        name="Login"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="14432319-ebae-4e6c-a79d-b5edadbb38e7"
+        name="Logout"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c5230335-9411-4a9f-a7c7-1ede02a707f0"
+        name="Manage Users"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ddd44c8d-792b-4cee-888f-c5b10c7e95b0"
+        name="Manage Schedules"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8128030b-2568-44e1-9622-f8f1ffdc1e1c"
+        name="Link / Unlink Schedule to Priority"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2b82e0e9-2185-4f09-8a2d-368f62034c18"
+        name="Manage Zones"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="660fe82f-9c62-451e-87dc-ba2c1373a3da"
+        name="Manage Devices"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2db792a3-9425-4889-a2cc-7eaa4a02ba71"
+        name="Manage Switches"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8efbdee7-0744-4af6-9330-dc6046e60986"
+        name="Link / Unlink Device to Schedule"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6361d4eb-4f3c-4966-b5cc-ec13a0bdfe72"
+        name="Link / Unlink Device to Zone"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="06bdc6fc-f929-4849-a8cc-7c8856529be1"
+        name="Manage Priorities "
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="267b8183-59cf-4cc4-b997-f98dbf4417a6"
+        name="Manage Homes"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="865cf1ea-804e-4f32-82ba-a920c9d7a218"
+        name="Manage Accounts"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

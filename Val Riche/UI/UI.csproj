@@ -233,6 +233,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="SmartPower - Shortcut.lnk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

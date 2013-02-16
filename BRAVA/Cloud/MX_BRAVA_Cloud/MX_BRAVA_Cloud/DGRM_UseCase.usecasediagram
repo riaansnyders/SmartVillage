@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="91501c6e-53d5-4edc-8c2c-846a0cb54eec" name="DGRM_UseCase" linkedPackageId="4343c586-da65-4caf-b8bd-72ea471c223c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="0c18c439-485b-4c3f-8b66-82bbbdc1c8c5">
+      <profileInstance Id="cfb55ba0-604c-464e-aab0-51e91d4895e6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="25e45059-a25c-4e80-b239-aea1bb0ceb32">
+      <profileInstance Id="5da15a67-0dec-49f0-bc72-9cd5f33b82ed" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b7ee5b3a-e1af-4665-8fa7-c83d6720e8ad" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="16d71302-6b7e-4609-9b31-857a51168a74" />
+        <suppliersInternal>
+          <dependency Id="6e9e507c-1aeb-42ad-84ca-8293ae829540">
+            <useCaseMoniker Id="fc016153-9df1-4aec-b27d-425caa7f40a7" LastKnownName="Notifications / Reports" />
+            <elementDefinition Id="067bffa9-e2a9-4b0e-9281-fb50db8a7331" />
+          </dependency>
+          <dependency Id="1ca4c8ab-ee20-4b17-9d20-5a89737623c8">
+            <useCaseMoniker Id="f43bc5fa-7d43-4486-95a3-c9aa5a17ad14" LastKnownName="Enable / Disable Schedule" />
+            <elementDefinition Id="e5587dde-a4b4-44ac-a8a2-2405930b347c" />
+          </dependency>
+          <dependency Id="e369daaa-8c5b-418f-bb15-d769c2248b71">
+            <useCaseMoniker Id="deaafaca-4153-4db9-80be-1f11125e86be" LastKnownName="Switches On / Off" />
+            <elementDefinition Id="c091a52f-e06d-4d0c-930d-877c123208a0" />
+          </dependency>
+          <dependency Id="137901fa-3118-4361-a9d5-9ac8633350f7">
+            <useCaseMoniker Id="f9019579-d2cf-401f-ae3a-02073b02165a" LastKnownName="Zones On/Off" />
+            <elementDefinition Id="47f1098a-f501-41f9-b582-978930e546cb" />
+          </dependency>
+          <dependency Id="b0fbe3ba-2a55-4c06-85a1-cc10a6bac911">
+            <useCaseMoniker Id="181eff04-aa95-4281-9725-4c3dfef394ad" LastKnownName="Devices On/Off" />
+            <elementDefinition Id="28f17f74-4787-4e9a-9474-370449201327" />
+          </dependency>
+          <dependency Id="0065eeeb-a146-49fa-942e-4d8a8b8381ff">
+            <useCaseMoniker Id="f3db7518-0b00-412e-a5d5-1b02087fbef6" LastKnownName="Login" />
+            <elementDefinition Id="d86a4183-6d89-4d7a-a286-a7f38995f350" />
+          </dependency>
+          <dependency Id="3cf64abb-98d1-4c6e-a7a5-11d694b0b536">
+            <useCaseMoniker Id="7da32cac-6b89-4d32-91b2-2240e0aa40d3" LastKnownName="Logout" />
+            <elementDefinition Id="8dfd8d38-2a5a-420f-affd-bd300def9fb3" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f241d08e-d0fa-41aa-812b-e8c0b18af5b0" name="Super User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6997dc4e-517d-4006-9c37-ca1aec3c2bc8" />
+        <suppliersInternal>
+          <dependency Id="884f9e5e-08e7-49dc-b5da-e2a55704f2e2">
+            <useCaseMoniker Id="fc016153-9df1-4aec-b27d-425caa7f40a7" LastKnownName="Notifications / Reports" />
+            <elementDefinition Id="9ad6a2be-1523-4645-a2da-22f84eacc344" />
+          </dependency>
+          <dependency Id="f87d53f9-9fdf-46b5-847b-1409d239fe10">
+            <useCaseMoniker Id="f3db7518-0b00-412e-a5d5-1b02087fbef6" LastKnownName="Login" />
+            <elementDefinition Id="d0888b69-c629-474a-bc30-9860a5528a09" />
+          </dependency>
+          <dependency Id="5432ed29-e56c-4da3-982c-f2c699e1a20c">
+            <useCaseMoniker Id="7da32cac-6b89-4d32-91b2-2240e0aa40d3" LastKnownName="Logout" />
+            <elementDefinition Id="6a9c7217-1bef-4b54-98b2-f9a42718716d" />
+          </dependency>
+          <dependency Id="9f518815-fd14-4dc3-a1c3-0fa7e0145f34">
+            <useCaseMoniker Id="f43bc5fa-7d43-4486-95a3-c9aa5a17ad14" LastKnownName="Enable / Disable Schedule" />
+            <elementDefinition Id="11d29523-258b-44e7-a47c-c9b4e0877646" />
+          </dependency>
+          <dependency Id="3f7f8f02-ffb9-4e38-8487-6867d34db539">
+            <useCaseMoniker Id="deaafaca-4153-4db9-80be-1f11125e86be" LastKnownName="Switches On / Off" />
+            <elementDefinition Id="1663518d-618e-465b-a6b5-8172cb762857" />
+          </dependency>
+          <dependency Id="5765fa28-70d8-42d8-a777-5af615aa583a">
+            <useCaseMoniker Id="f9019579-d2cf-401f-ae3a-02073b02165a" LastKnownName="Zones On/Off" />
+            <elementDefinition Id="8c739fe2-a9d8-4451-b8f0-21bc38a20d6f" />
+          </dependency>
+          <dependency Id="1b787a55-3c14-44c2-b6f0-9a7b22e6b56a">
+            <useCaseMoniker Id="181eff04-aa95-4281-9725-4c3dfef394ad" LastKnownName="Devices On/Off" />
+            <elementDefinition Id="f127e8f2-1a0a-49fd-a262-8e6f8fc9c71e" />
+          </dependency>
+          <dependency Id="c3098acd-0f6f-4acd-9d29-6a469b32c00b">
+            <useCaseMoniker Id="b70b522e-c612-4837-95ab-989ed8d2a6c4" LastKnownName="Manage Users" />
+            <elementDefinition Id="0c4f3266-c4e8-4c15-9e92-6da69af10578" />
+          </dependency>
+          <dependency Id="eced8c7d-8180-44f6-b9f2-8033d6f45a37">
+            <useCaseMoniker Id="9a2c1cd9-bf99-4e15-915b-8794ba391416" LastKnownName="Manage Schedules" />
+            <elementDefinition Id="22661a19-1186-4850-857e-5d64b82078f4" />
+          </dependency>
+          <dependency Id="85aa7276-d784-4321-8b62-bd791b9c8f54">
+            <useCaseMoniker Id="78a8561b-1512-4e5d-a04a-ad5e160d5ad6" LastKnownName="Link / Unlink Schedule to Priority" />
+            <elementDefinition Id="ef8051f8-d6da-4a8d-8c6f-6f604cb54ae0" />
+          </dependency>
+          <dependency Id="82f7b9fe-d040-4327-bb81-169468f0d2d9">
+            <useCaseMoniker Id="6cdb2948-dd23-46c2-9b6a-2a9a4ad4328b" LastKnownName="Manage Zones" />
+            <elementDefinition Id="7ba7bf65-d038-43e8-b709-c3cfc4b41f3f" />
+          </dependency>
+          <dependency Id="3cf6e817-b624-4c39-98ff-71944ef059d1">
+            <useCaseMoniker Id="f66e01c8-1d4c-44a2-8785-2d699c2d1a9c" LastKnownName="Manage Devices" />
+            <elementDefinition Id="a501e6f9-acde-41cc-919c-49095297af1d" />
+          </dependency>
+          <dependency Id="27c1245a-f286-4c7e-84fb-92f5992ebeeb">
+            <useCaseMoniker Id="e786f548-d9c6-413d-90ad-30a5eb3cb242" LastKnownName="Manage Switches" />
+            <elementDefinition Id="0f7c66f8-612d-4756-bce8-60cf6b29d079" />
+          </dependency>
+          <dependency Id="5caeaf67-bfde-499e-932f-1dcfc3910d7e">
+            <useCaseMoniker Id="1aba6077-e0bb-4304-a8e2-a905a364f6d3" LastKnownName="Link / Unlink Device to Schedule" />
+            <elementDefinition Id="1d0c3f25-c174-4a04-aed7-72d39485647c" />
+          </dependency>
+          <dependency Id="873f4968-7c06-467d-a3e1-54a6937a9db2">
+            <useCaseMoniker Id="78cc0ab1-3104-45e4-aae1-647ce7f234cf" LastKnownName="Link / Unlink Device to Zone" />
+            <elementDefinition Id="6fd48d3f-9f68-44c6-b53a-aa35b2b9a029" />
+          </dependency>
+          <dependency Id="e89f0ebd-9987-49e0-b0b7-476405258bdd">
+            <useCaseMoniker Id="356c6e3f-b85d-4329-8352-4a25368832f6" LastKnownName="Manage Priorities " />
+            <elementDefinition Id="85d5cefb-2c37-4f0d-b3bd-d69b953e8f21" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ba206ffa-33d1-4ca6-bcb4-e13fa6b64dfc" name="System Administrator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="22c158e5-deb7-4643-a5fc-ee53d056756f" />
+        <suppliersInternal>
+          <dependency Id="042f5533-d729-4e5a-a864-a7a14c1ca8fa">
+            <useCaseMoniker Id="b70b522e-c612-4837-95ab-989ed8d2a6c4" LastKnownName="Manage Users" />
+            <elementDefinition Id="d5b343ec-5d43-40d7-b725-0e7c6d2b20bf" />
+          </dependency>
+          <dependency Id="8d0d7bc8-2316-48ee-8c2f-fa4e36cc51dd">
+            <useCaseMoniker Id="f3db7518-0b00-412e-a5d5-1b02087fbef6" LastKnownName="Login" />
+            <elementDefinition Id="48859da1-de49-4261-b27f-e5ae1ebc5836" />
+          </dependency>
+          <dependency Id="8c373905-cb42-45ce-a03e-37537cf35f22">
+            <useCaseMoniker Id="7da32cac-6b89-4d32-91b2-2240e0aa40d3" LastKnownName="Logout" />
+            <elementDefinition Id="7726ff69-294e-41e3-a565-0a81a5fa8b1a" />
+          </dependency>
+          <dependency Id="8d5e5029-fe0e-4ce6-93bc-4ec239fd54a3">
+            <useCaseMoniker Id="f43bc5fa-7d43-4486-95a3-c9aa5a17ad14" LastKnownName="Enable / Disable Schedule" />
+            <elementDefinition Id="01701681-a2f0-45a3-8f98-394ef4b9a71f" />
+          </dependency>
+          <dependency Id="8029ea48-1bf3-4ab1-a11c-7efc3fe7a9dd">
+            <useCaseMoniker Id="deaafaca-4153-4db9-80be-1f11125e86be" LastKnownName="Switches On / Off" />
+            <elementDefinition Id="6f555fcb-c9e3-4a86-92b6-d0157c064e39" />
+          </dependency>
+          <dependency Id="6604dacd-b222-4994-972c-9cedbe9a24ac">
+            <useCaseMoniker Id="f9019579-d2cf-401f-ae3a-02073b02165a" LastKnownName="Zones On/Off" />
+            <elementDefinition Id="722c3f9b-7bfd-4c8c-9127-4a005aa719ec" />
+          </dependency>
+          <dependency Id="1d144018-a02e-47b1-a7f1-e4a74cd5c192">
+            <useCaseMoniker Id="181eff04-aa95-4281-9725-4c3dfef394ad" LastKnownName="Devices On/Off" />
+            <elementDefinition Id="5c492a13-ccb6-4a4c-adf4-72a25acaf260" />
+          </dependency>
+          <dependency Id="97b81b6b-2958-4ac2-b01b-8736e5c33c65">
+            <useCaseMoniker Id="fc016153-9df1-4aec-b27d-425caa7f40a7" LastKnownName="Notifications / Reports" />
+            <elementDefinition Id="767a55de-1999-4128-a61b-b45086c226ff" />
+          </dependency>
+          <dependency Id="09b84e88-b4ea-4c81-b1c6-0c27134b2762">
+            <useCaseMoniker Id="983acb7f-0d86-48af-8716-e378a7914df7" LastKnownName="Manage Accounts" />
+            <elementDefinition Id="6629a627-fa46-4627-8705-f789094180aa" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fc016153-9df1-4aec-b27d-425caa7f40a7" name="Notifications / Reports" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="08ec5fb9-f385-4baa-a0b1-a52026af0797" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f43bc5fa-7d43-4486-95a3-c9aa5a17ad14" name="Enable / Disable Schedule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ed3187c2-0cbb-48d0-9d7e-a3e8f8ab0bfd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="deaafaca-4153-4db9-80be-1f11125e86be" name="Switches On / Off" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4fcc5628-336d-48dd-9407-36c3fc4e6f92" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f9019579-d2cf-401f-ae3a-02073b02165a" name="Zones On/Off" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="631e87db-fd3d-407f-b3d2-06e8cc68ec8d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="181eff04-aa95-4281-9725-4c3dfef394ad" name="Devices On/Off" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="92fb041d-b118-4a3f-b280-0c0973bad558" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f3db7518-0b00-412e-a5d5-1b02087fbef6" name="Login" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d0887c7e-7343-499f-a540-33fa3966ca60" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7da32cac-6b89-4d32-91b2-2240e0aa40d3" name="Logout" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="14432319-ebae-4e6c-a79d-b5edadbb38e7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b70b522e-c612-4837-95ab-989ed8d2a6c4" name="Manage Users" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c5230335-9411-4a9f-a7c7-1ede02a707f0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9a2c1cd9-bf99-4e15-915b-8794ba391416" name="Manage Schedules" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ddd44c8d-792b-4cee-888f-c5b10c7e95b0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="78a8561b-1512-4e5d-a04a-ad5e160d5ad6" name="Link / Unlink Schedule to Priority" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8128030b-2568-44e1-9622-f8f1ffdc1e1c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6cdb2948-dd23-46c2-9b6a-2a9a4ad4328b" name="Manage Zones" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b82e0e9-2185-4f09-8a2d-368f62034c18" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f66e01c8-1d4c-44a2-8785-2d699c2d1a9c" name="Manage Devices" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="660fe82f-9c62-451e-87dc-ba2c1373a3da" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e786f548-d9c6-413d-90ad-30a5eb3cb242" name="Manage Switches" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2db792a3-9425-4889-a2cc-7eaa4a02ba71" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1aba6077-e0bb-4304-a8e2-a905a364f6d3" name="Link / Unlink Device to Schedule" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8efbdee7-0744-4af6-9330-dc6046e60986" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="78cc0ab1-3104-45e4-aae1-647ce7f234cf" name="Link / Unlink Device to Zone" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6361d4eb-4f3c-4966-b5cc-ec13a0bdfe72" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="356c6e3f-b85d-4329-8352-4a25368832f6" name="Manage Priorities " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="06bdc6fc-f929-4849-a8cc-7c8856529be1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="983acb7f-0d86-48af-8716-e378a7914df7" name="Manage Accounts" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="865cf1ea-804e-4f32-82ba-a920c9d7a218" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="4343c586-da65-4caf-b8bd-72ea471c223c" name="MX_BRAVA_Cloud">
+    <elementDefinition Id="86955c84-4a5c-4090-9a25-f4bb31bd9141" />
+  </package>
+</useCaseModelRoot>
