@@ -17,7 +17,34 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="ModelDefinition\Package_0619.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0623.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Folder Include="ModelDefinition\" />
+    <Content Include="DGRM_ProcessView.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DGRM_ProcessView.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_ProcessView.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="DGRM_Process_To_DesignDependencies.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DGRM_Process_To_DesignDependencies.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_Process_To_DesignDependencies.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="DGRM_Process_To_DesignElements.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DGRM_Process_To_DesignElements.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_Process_To_DesignElements.classdiagram</DependentUpon>
+    </Content>
     <Content Include="DGRM_UseCase.usecasediagram">
       <SubType>Content</SubType>
     </Content>
@@ -28,5 +55,29 @@
     <Content Include="ModelDefinition\MX_BRAVA_Cloud.uml">
       <SubType>Content</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="DGRM_DeploymentView.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DGRM_DeploymentView.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_DeploymentView.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DGRM_DeploymentView.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_DeploymentView.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DGRM_LogicalView.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DGRM_LogicalView.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_LogicalView.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DGRM_LogicalView.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DGRM_LogicalView.layerdiagram</DependentUpon>
+    </Validate>
   </ItemGroup>
 </Project>

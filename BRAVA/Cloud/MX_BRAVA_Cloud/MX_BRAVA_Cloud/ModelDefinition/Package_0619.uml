@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+  dslVersion="1.0.0.0"
+  Id="f14b1b39-4f40-4228-9e74-a1523eea3a49"
+  name="Service Layer / API" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="3e290c09-de30-43b1-94bd-7216eee5f591">
+      <packageMoniker
+        Id="29f8ae2c-8a3a-4247-ae4b-728f6a735af9"
+        LastKnownName="Data"
+        LastKnownLocation="Package_0623.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="120bfef6-ba0b-44a6-9e30-24233495b812"
+        name="Security"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7e650d6f-bc54-4b18-8c42-e03a18e2f873"
+        name="Business"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f545cc46-f10d-4a9c-80cc-32553e6be87c"
+        name="DataAccess"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a1fb49c1-6cac-4dbc-acfb-c03356a9959f"
+        name="Reporting"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a50757e0-11b6-411c-bf3f-3872e3f3e9c5"
+        name="Auditing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="08df9735-3f8a-4211-92a9-9b516fa66972"
+        name="ExceptionHandling"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="495b7bbc-9ddb-4c1b-86ad-6157820a830c"
+        name="IService"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

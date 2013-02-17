@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
   dslVersion="1.0.0.0"
   Id="86955c84-4a5c-4090-9a25-f4bb31bd9141"
   name="MX_BRAVA_Cloud" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -397,6 +397,562 @@
         name="Manage Accounts"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fce8c4a2-8c65-4ebc-bcd3-e8b338340e14"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="286863d0-d323-478a-8494-2d9e4326eac8"
+        name="Security"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="ba079768-94e2-4261-b222-11a08d08c5d1">
+            <componentMoniker
+              Id="8ca26f40-f74c-4bd6-8881-28d425e8a465"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="36cd9836-9f95-4f69-bf6e-9993decba00d"
+        name="Business"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="bf3c0fd1-cc66-41bd-b2a8-f9278bbc1880">
+            <componentMoniker
+              Id="286863d0-d323-478a-8494-2d9e4326eac8"
+              LastKnownName="Security"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="3cf7c7aa-9567-4aff-a80a-c170cc44896e">
+            <componentMoniker
+              Id="0aecea91-930e-49e8-83a0-35131124842e"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="6a849574-72c0-4936-a8bd-3da63417734f">
+            <componentMoniker
+              Id="c69d4685-551a-4c56-bbb1-fd4d1c88b1cc"
+              LastKnownName="Auditing"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="a3526f0c-dbd4-4bea-a344-469639314377">
+            <componentMoniker
+              Id="8ca26f40-f74c-4bd6-8881-28d425e8a465"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="0aecea91-930e-49e8-83a0-35131124842e"
+        name="DataAccess"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="4105169e-5ca1-4b93-8015-32e9d2195ebb">
+            <componentMoniker
+              Id="8ca26f40-f74c-4bd6-8881-28d425e8a465"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="8ca26f40-f74c-4bd6-8881-28d425e8a465"
+        name="ExceptionHandling"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="c69d4685-551a-4c56-bbb1-fd4d1c88b1cc"
+        name="Auditing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="0ddfd6ac-fba5-4b70-9822-571c15e6769c">
+            <componentMoniker
+              Id="0aecea91-930e-49e8-83a0-35131124842e"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="25a7d633-98bb-4b6f-a7e2-5ba3da1adbcc"
+        name="Reporting"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="007bbd72-24ae-4dc3-a729-b115bdf8398e">
+            <componentMoniker
+              Id="0aecea91-930e-49e8-83a0-35131124842e"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="e858e012-a621-4dc7-b02b-24077d1509aa">
+            <componentMoniker
+              Id="286863d0-d323-478a-8494-2d9e4326eac8"
+              LastKnownName="Security"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f83683c4-af92-4773-a9cd-ecee64c4a95b"
+        name="Security"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="689a83da-7b05-4138-9936-1eac8f3d4027">
+            <classMoniker
+              Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="1d9aed53-fedd-4226-826a-233c26f2fccd">
+            <classMoniker
+              Id="d9383108-ab94-4272-b455-7a8c8b4eaf41"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f4f8c6a9-0346-49bb-9e76-a516749770b2"
+            name="LoginUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f01f2061-46ca-4631-8c2f-c070586dd3e2"
+            name="LogoutUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c17f77ab-bfd3-4f4c-a72f-099b2b25c3a7"
+            name="IsValidUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="96325e19-4ee9-4b48-9be6-edfa21dc2bb4"
+            name="IsUserInRole"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c47605ea-0901-4102-8f78-80c2b87c5666"
+            name="AssignUserToRole"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7624069b-30de-4f5f-af78-8db75b33a153"
+            name="EnableUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="61e83feb-4604-49f5-8640-05d2edcda292"
+            name="DisableUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="435f1831-ab72-4bc7-bddd-0e2bfd47c73f"
+            name="RemoveUserFromRole"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="af8d80c8-0223-4b9a-983c-38bb65485ca2"
+            name="CreateUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4c87c58d-ed3b-499a-8d60-b0dfd82f111b"
+            name="DeleteUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="61ff3b04-7339-4279-9c23-6accf4009910"
+        name="Business"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="96552c3a-8335-49ec-bb2f-00bb12caf978">
+            <classMoniker
+              Id="f83683c4-af92-4773-a9cd-ecee64c4a95b"
+              LastKnownName="Security"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="81f93dfa-16ec-42b7-9ba5-7f3c27fb4159">
+            <classMoniker
+              Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="901e006d-889a-4b2d-bbe3-14a8a9e31554">
+            <classMoniker
+              Id="d9383108-ab94-4272-b455-7a8c8b4eaf41"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="8064c522-5ecb-4a24-89b9-319efb9238e9">
+            <classMoniker
+              Id="45c1b2a3-b658-4b4f-ab0c-ce62302d3042"
+              LastKnownName="Auditing"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a977b915-be58-4b66-9f94-9a6284dd865a"
+            name="ManageSchedules"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9a7e2652-741a-4a76-9f99-5d9087b17bfd"
+            name="ManageSwitches"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fc79709d-98d0-420c-9be4-ac72968975e4"
+            name="ManageDevices"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="920484cc-5f3a-497f-ac78-021af8fddf02"
+            name="ManageZones"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="503457d7-019c-4a4a-a2d2-8d3cdc94ba6d"
+            name="ManagePriorities"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ca191f55-c264-4c3f-9167-4a77d3347779"
+            name="UpdateZoneMode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8f4bceec-a9ed-4f00-a1f1-12e5bb9b46ec"
+            name="UpdateDeviceMode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a71477ac-c0c2-40ca-8d34-f7f8975a1fe9"
+            name="UpdateSwitchMode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7c348b64-0943-403f-82d8-014f10ba97a6"
+            name="LinkScheduleToPriority"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="197c9cac-dc72-499d-9cf0-f42f7e8c99a8"
+            name="UnlinkScheduleFromPriority"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f6b1f82a-8d50-4243-9101-0f9f5c8245cd"
+            name="LinkDeviceToSchedule"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a4c85737-5833-46da-a6a7-6e2d0973f89b"
+            name="UnlinkDeviceFromSchedule"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b"
+        name="DataAccess"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2db94677-f117-4e94-98b3-51eb9f9db850">
+            <classMoniker
+              Id="d9383108-ab94-4272-b455-7a8c8b4eaf41"
+              LastKnownName="ExceptionHandling"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8c22a2e1-8c13-4b7b-b9a9-37c6218ee64f"
+            name="Insert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="692cec83-ae16-45dc-8f15-b53b677b48cb"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7e8d05d2-8429-4de8-a83d-91ec951ec767"
+            name="Delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8b3d4893-94a0-4353-bef4-724d68fdc52c"
+            name="Get"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f59c2420-560c-40e4-8164-7cf40cb947a5"
+            name="List"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="45c1b2a3-b658-4b4f-ab0c-ce62302d3042"
+        name="Auditing"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="275ffb44-d827-4adb-8a62-7d31d40829ad">
+            <classMoniker
+              Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9b443eed-619c-4033-9617-9d126d341ea4"
+            name="LogChanges"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d9383108-ab94-4272-b455-7a8c8b4eaf41"
+        name="ExceptionHandling"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="60dce84d-99c0-4d81-9e22-be1e5ccf4e22"
+            name="BroadcastException"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cc0b59c0-3ec3-4a93-bf9d-3fda62a85633"
+            name="LogException"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8832bd6a-1031-4a28-b23f-cfb49cba43fb"
+        name="Reporting"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="eba821cf-9cc6-49df-9be3-412f109ebb6a">
+            <classMoniker
+              Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b"
+              LastKnownName="DataAccess"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+          <dependency
+            Id="0e1999a3-6520-41af-bd00-2baf3b956853">
+            <classMoniker
+              Id="f83683c4-af92-4773-a9cd-ecee64c4a95b"
+              LastKnownName="Security"
+              LastKnownLocation="MX_BRAVA_Cloud.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="48f8708d-bc74-4daf-a89d-3e5643ea2813"
+            name="GetReport"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="798d1d1b-b69a-45f7-9057-3de6b6fa0a61"
+            name="SelectReport"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="17870820-89a2-4bc0-99f4-e5b1da869113"
+            name="ListReports"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f14b1b39-4f40-4228-9e74-a1523eea3a49"
+        LastKnownName="Service Layer / API"
+        LastKnownLocation="Package_0619.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="29f8ae2c-8a3a-4247-ae4b-728f6a735af9"
+        LastKnownName="Data"
+        LastKnownLocation="Package_0623.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

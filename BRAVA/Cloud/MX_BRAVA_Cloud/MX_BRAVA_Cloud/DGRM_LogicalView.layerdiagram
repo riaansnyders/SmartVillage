@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="61cc26b3-76d5-4b64-9bfc-3fe9d0bbb7a7" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="10081124-5380-4f7d-92e6-76b5c483848f" name="Service Layer / API">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7a7d89ff-99d6-47d1-93ca-f5094ff40976" direction="Bidirectional">
+          <layerMoniker Id="33463535-fffa-43a0-ac20-eb50b45ada31" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="d8722fea-7524-40f5-ba44-0f6d1861b10b" name="Security" />
+        <layer Id="4dcc45ba-603d-4ce7-b587-a413accc8fad" name="Business Logic" />
+        <layer Id="9a52d25b-aecd-4c14-932c-1e72bfe91e85" name="Data Access" />
+        <layer Id="f7abfe97-6c2b-49ba-adde-f6e42c7d8782" name="Exception Handling" />
+        <layer Id="4a575490-eba9-4349-af10-cce46e816eb1" name="Auditing / Reporting" />
+      </childLayers>
+    </layer>
+    <layer Id="33463535-fffa-43a0-ac20-eb50b45ada31" name="Data Layer">
+      <childLayers>
+        <layer Id="d039ee96-ce69-432c-a0d0-6df129e830fa" name="Data Store" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

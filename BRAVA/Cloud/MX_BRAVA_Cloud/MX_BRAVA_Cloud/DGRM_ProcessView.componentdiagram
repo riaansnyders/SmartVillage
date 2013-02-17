@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="54fbf52c-7206-4f3f-b9b9-d4ced3d8725d" name="DGRM_ProcessView" linkedPackageId="879dba7e-fdd0-408d-bea4-adc0456065ce" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="4a350b37-4710-4b1e-ad8c-3fa2cba1b103">
+      <profileInstance Id="21cfd526-c3fd-4763-9d2c-ff0af397a508" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5c1794e7-6d8b-431f-be9f-106acfd2679d">
+      <profileInstance Id="c74e6485-e45f-41b8-a331-5d6975c9e4c8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="a03c66b1-cfb3-4415-840b-5e1351932487" name="Security" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="286863d0-d323-478a-8494-2d9e4326eac8" />
+        <suppliersInternal>
+          <dependency Id="37ed9fbe-787a-47b8-ab19-567b24cbbef7">
+            <componentMoniker Id="9ecc78fc-6925-4b62-b619-3c9af178947c" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="ba079768-94e2-4261-b222-11a08d08c5d1" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="02d29be5-c164-4e5f-86e3-76e61849a24d" name="Business" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="36cd9836-9f95-4f69-bf6e-9993decba00d" />
+        <suppliersInternal>
+          <dependency Id="fa30e676-2954-4c06-9099-aaf4c5fe5c5c">
+            <componentMoniker Id="a03c66b1-cfb3-4415-840b-5e1351932487" LastKnownName="Security" />
+            <elementDefinition Id="bf3c0fd1-cc66-41bd-b2a8-f9278bbc1880" />
+          </dependency>
+          <dependency Id="13f6f217-bb73-4569-8e57-7f9d20313b76">
+            <componentMoniker Id="fa065b73-d3c0-49cb-ae23-f781322f6d4e" LastKnownName="DataAccess" />
+            <elementDefinition Id="3cf7c7aa-9567-4aff-a80a-c170cc44896e" />
+          </dependency>
+          <dependency Id="f3ec0144-715e-426f-a19b-33c5c21e53d9">
+            <componentMoniker Id="d0422845-be81-4bcc-a9ad-c6c273ef4620" LastKnownName="Auditing" />
+            <elementDefinition Id="6a849574-72c0-4936-a8bd-3da63417734f" />
+          </dependency>
+          <dependency Id="7d3e8eda-bc3c-4e23-9a51-0d595943d8fd">
+            <componentMoniker Id="9ecc78fc-6925-4b62-b619-3c9af178947c" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="a3526f0c-dbd4-4bea-a344-469639314377" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="fa065b73-d3c0-49cb-ae23-f781322f6d4e" name="DataAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0aecea91-930e-49e8-83a0-35131124842e" />
+        <suppliersInternal>
+          <dependency Id="e24d4813-5bc4-49f7-bc27-c57bd8b30237">
+            <componentMoniker Id="9ecc78fc-6925-4b62-b619-3c9af178947c" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="4105169e-5ca1-4b93-8015-32e9d2195ebb" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="9ecc78fc-6925-4b62-b619-3c9af178947c" name="ExceptionHandling" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8ca26f40-f74c-4bd6-8881-28d425e8a465" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d0422845-be81-4bcc-a9ad-c6c273ef4620" name="Auditing" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c69d4685-551a-4c56-bbb1-fd4d1c88b1cc" />
+        <suppliersInternal>
+          <dependency Id="6455153d-7986-4e72-a731-ef65dd5521d9">
+            <componentMoniker Id="fa065b73-d3c0-49cb-ae23-f781322f6d4e" LastKnownName="DataAccess" />
+            <elementDefinition Id="0ddfd6ac-fba5-4b70-9822-571c15e6769c" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="5df83107-88c1-4aff-ba86-fe084d8190f5" name="Reporting" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="25a7d633-98bb-4b6f-a7e2-5ba3da1adbcc" />
+        <suppliersInternal>
+          <dependency Id="605c910b-f91b-4ba8-b7e8-889942f5af44">
+            <componentMoniker Id="fa065b73-d3c0-49cb-ae23-f781322f6d4e" LastKnownName="DataAccess" />
+            <elementDefinition Id="007bbd72-24ae-4dc3-a729-b115bdf8398e" />
+          </dependency>
+          <dependency Id="e4962269-fe57-4e09-8561-9283ff268372">
+            <componentMoniker Id="a03c66b1-cfb3-4415-840b-5e1351932487" LastKnownName="Security" />
+            <elementDefinition Id="e858e012-a621-4dc7-b02b-24077d1509aa" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="879dba7e-fdd0-408d-bea4-adc0456065ce" name="MX_BRAVA_Cloud">
+    <elementDefinition Id="86955c84-4a5c-4090-9a25-f4bb31bd9141" />
+  </package>
+</componentModel>

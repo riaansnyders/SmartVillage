@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="37b0e180-e4af-42b8-842c-146cd3272213" name="DGRM_Process_To_DesignDependencies" linkedPackageId="0257c7aa-02d4-41bd-b93b-b0c81003bab8" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="99081f67-7a82-46cc-9f5b-93b4407afaaa">
+      <profileInstance Id="329bebc1-c550-4e56-91e8-64d1fd3810d9" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5ad75b42-976c-4f88-a1f5-61dbc4be99b3">
+      <profileInstance Id="00c96e5d-178b-469d-81d1-d1dd98a78c0f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="eb7bfe58-a703-4632-96bf-e05a5509a2f0" name="Service Layer / API">
+        <elementDefinition Id="f14b1b39-4f40-4228-9e74-a1523eea3a49" />
+        <suppliersInternal>
+          <dependency Id="98306bb6-1bc8-44d7-a989-e309baf0e684">
+            <packageMoniker Id="6fa3c3b2-5797-415a-9664-728de1280f7a" LastKnownName="Data" />
+            <elementDefinition Id="3e290c09-de30-43b1-94bd-7216eee5f591" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="867f65a5-88f1-472e-a6ff-e070cc74b091" name="Security" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="120bfef6-ba0b-44a6-9e30-24233495b812" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="ec3f30cd-f654-430d-86bf-c90344daef42" name="Business" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="7e650d6f-bc54-4b18-8c42-e03a18e2f873" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8139d629-52cc-43c0-b10f-64037ccfe2dc" name="DataAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="f545cc46-f10d-4a9c-80cc-32553e6be87c" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="ece1f97c-8448-4152-a5aa-00340289c19c" name="Reporting" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a1fb49c1-6cac-4dbc-acfb-c03356a9959f" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e76f0047-cc9d-411a-832f-b7bba7d8dbbd" name="Auditing" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a50757e0-11b6-411c-bf3f-3872e3f3e9c5" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="d381d9cf-59d4-40c5-954b-62c7e24dd1ef" name="ExceptionHandling" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="08df9735-3f8a-4211-92a9-9b516fa66972" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="ec61bda2-31f8-4eed-b279-581b63164593" name="IService" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="495b7bbc-9ddb-4c1b-86ad-6157820a830c" />
+            </Interface>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="6fa3c3b2-5797-415a-9664-728de1280f7a" name="Data">
+        <elementDefinition Id="29f8ae2c-8a3a-4247-ae4b-728f6a735af9" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="2b7e0527-3c66-4810-9073-db757077a427" name="DataStore" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="cce3ec8f-87ff-42c8-af3f-6ee95199a949" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="0257c7aa-02d4-41bd-b93b-b0c81003bab8" name="MX_BRAVA_Cloud">
+    <elementDefinition Id="86955c84-4a5c-4090-9a25-f4bb31bd9141" />
+  </package>
+</logicalClassDesignerModel>

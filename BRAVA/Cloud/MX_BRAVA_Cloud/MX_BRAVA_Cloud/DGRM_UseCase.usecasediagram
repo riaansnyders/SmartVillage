@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="91501c6e-53d5-4edc-8c2c-846a0cb54eec" name="DGRM_UseCase" linkedPackageId="4343c586-da65-4caf-b8bd-72ea471c223c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="0c18c439-485b-4c3f-8b66-82bbbdc1c8c5">
-      <profileInstance Id="cfb55ba0-604c-464e-aab0-51e91d4895e6" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="25e45059-a25c-4e80-b239-aea1bb0ceb32">
-      <profileInstance Id="5da15a67-0dec-49f0-bc72-9cd5f33b82ed" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="91501c6e-53d5-4edc-8c2c-846a0cb54eec" name="DGRM_UseCase" linkedPackageId="4343c586-da65-4caf-b8bd-72ea471c223c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="b7ee5b3a-e1af-4665-8fa7-c83d6720e8ad" name="User" isAbstract="false" isLeaf="false">
@@ -252,5 +238,19 @@
   </packagedElements>
   <package Id="4343c586-da65-4caf-b8bd-72ea471c223c" name="MX_BRAVA_Cloud">
     <elementDefinition Id="86955c84-4a5c-4090-9a25-f4bb31bd9141" />
+    <profileInstances>
+      <packageHasProfileInstances Id="0c18c439-485b-4c3f-8b66-82bbbdc1c8c5">
+        <profileInstance Id="cfb55ba0-604c-464e-aab0-51e91d4895e6" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="25e45059-a25c-4e80-b239-aea1bb0ceb32">
+        <profileInstance Id="5da15a67-0dec-49f0-bc72-9cd5f33b82ed" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

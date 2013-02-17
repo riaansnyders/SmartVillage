@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f8659034-4abd-49a2-975f-4f8de02e8631" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="07421bfb-ccc4-4db1-9619-0ddd9dd2ebb7" name="BRAVA Cloud">
+      <childLayers>
+        <layer Id="a89fb349-de75-4ea0-8d3e-f4786c6f440d" name="Node.js Service Endpoints">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="1679bc78-f0d8-463e-b02c-185087defaa3" direction="Bidirectional">
+              <layerMoniker Id="09a3d44a-5de1-41a5-811e-02e4593a163e" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="09a3d44a-5de1-41a5-811e-02e4593a163e" name=".Net / Mono Service Layer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="b6d43d9f-a333-4e47-acaf-3bf9d85a6b7e" direction="Bidirectional">
+              <layerMoniker Id="8109f351-ccf1-4694-bcdf-53818b53dee3" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="8109f351-ccf1-4694-bcdf-53818b53dee3" name="Microsof SQL Server" />
+      </childLayers>
+    </layer>
+    <layer Id="9dae99b3-cdf8-44d5-8d2c-82fdad3f58ea" name="Web / Desktop">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5f44c69c-0ce5-4245-bd05-0f8df0717b80" direction="Bidirectional">
+          <layerMoniker Id="07421bfb-ccc4-4db1-9619-0ddd9dd2ebb7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="98ccb70a-75fd-42aa-8d96-9c09f98d13ff" name="Prodea">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4f6dc48a-6c8e-4938-a24f-3eb473cafa0c" direction="Bidirectional">
+          <layerMoniker Id="07421bfb-ccc4-4db1-9619-0ddd9dd2ebb7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e2ec18ba-6247-481b-8ba6-7be0b05b5681" name="Mobile">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="850e6ddc-1b84-43ed-9dd7-e890d552ff0f" direction="Bidirectional">
+          <layerMoniker Id="07421bfb-ccc4-4db1-9619-0ddd9dd2ebb7" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

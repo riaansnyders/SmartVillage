@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="a30837a0-65e1-4bac-ae3e-1e608f457107" name="DGRM_Process_To_DesignElements" linkedPackageId="17ce58cd-685d-40e4-9bf8-c0fec3b77935" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="cf90e8d3-fb51-4236-9892-a7ad0633854c">
+      <profileInstance Id="dbab6986-38c7-4a60-8fc8-3ffb7ea3ba5d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="af8aef0b-e01c-4d56-9c78-cac494f62cd1">
+      <profileInstance Id="800bc16f-4405-4638-9786-951f2bf17d8b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="60b1e5dd-d6e5-46ea-99f6-d555e997f752" name="Security" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f83683c4-af92-4773-a9cd-ecee64c4a95b" />
+        <suppliersInternal>
+          <dependency Id="b19e84bd-4349-402f-898d-7e923d027aa1">
+            <classMoniker Id="a4e9184c-d6c2-4bf8-b293-84a5fc697974" LastKnownName="DataAccess" />
+            <elementDefinition Id="689a83da-7b05-4138-9936-1eac8f3d4027" />
+          </dependency>
+          <dependency Id="7aa03baa-34ad-4b69-be34-b7e66f7d78a9">
+            <classMoniker Id="f94721fe-60c8-481f-8fa9-a824b517a9a5" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="1d9aed53-fedd-4226-826a-233c26f2fccd" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="0b31bd1d-2f9a-48d5-8db0-0ee00b4c9c0f" name="LoginUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f4f8c6a9-0346-49bb-9e76-a516749770b2" />
+          </operation>
+          <operation Id="8d9fc401-c65f-4f73-9da0-49d1a92121e5" name="LogoutUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f01f2061-46ca-4631-8c2f-c070586dd3e2" />
+          </operation>
+          <operation Id="73921f22-f131-46e4-b727-ec2bf0a7ed4f" name="IsValidUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c17f77ab-bfd3-4f4c-a72f-099b2b25c3a7" />
+          </operation>
+          <operation Id="1d5803a8-ff4d-44ec-b2c7-4497effaa8c2" name="IsUserInRole" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="96325e19-4ee9-4b48-9be6-edfa21dc2bb4" />
+          </operation>
+          <operation Id="f1a0eff4-89ae-4a06-8aa0-36fea661b994" name="AssignUserToRole" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c47605ea-0901-4102-8f78-80c2b87c5666" />
+          </operation>
+          <operation Id="a281329a-27d9-4323-93b2-97967a0e0ee9" name="EnableUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7624069b-30de-4f5f-af78-8db75b33a153" />
+          </operation>
+          <operation Id="e61f7ba1-cd2e-48a9-b252-17c3a7f8623a" name="DisableUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="61e83feb-4604-49f5-8640-05d2edcda292" />
+          </operation>
+          <operation Id="10e3f1ba-481e-44f7-a9b0-f7f34b59f0b9" name="RemoveUserFromRole" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="435f1831-ab72-4bc7-bddd-0e2bfd47c73f" />
+          </operation>
+          <operation Id="7489a370-3e23-4388-920d-3afa464a10c3" name="CreateUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="af8d80c8-0223-4b9a-983c-38bb65485ca2" />
+          </operation>
+          <operation Id="5e97fc99-da03-4aa6-b7ee-37f51bc1daed" name="DeleteUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c87c58d-ed3b-499a-8d60-b0dfd82f111b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7b7c1c31-dd03-4208-97af-16dc1e8ff006" name="Business" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="61ff3b04-7339-4279-9c23-6accf4009910" />
+        <suppliersInternal>
+          <dependency Id="b9c28ec5-15ad-47f6-83ff-0fabe6260a77">
+            <classMoniker Id="60b1e5dd-d6e5-46ea-99f6-d555e997f752" LastKnownName="Security" />
+            <elementDefinition Id="96552c3a-8335-49ec-bb2f-00bb12caf978" />
+          </dependency>
+          <dependency Id="9934a9b5-c342-4fb7-8a2c-17c34352a8ce">
+            <classMoniker Id="a4e9184c-d6c2-4bf8-b293-84a5fc697974" LastKnownName="DataAccess" />
+            <elementDefinition Id="81f93dfa-16ec-42b7-9ba5-7f3c27fb4159" />
+          </dependency>
+          <dependency Id="6627d233-29a7-4a8b-9c8a-fa9cc89c151a">
+            <classMoniker Id="f94721fe-60c8-481f-8fa9-a824b517a9a5" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="901e006d-889a-4b2d-bbe3-14a8a9e31554" />
+          </dependency>
+          <dependency Id="5361b7a3-689c-4c6c-947f-b0deb788e29d">
+            <classMoniker Id="708e6fbe-88be-4000-a544-adc077505c3f" LastKnownName="Auditing" />
+            <elementDefinition Id="8064c522-5ecb-4a24-89b9-319efb9238e9" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="c925d43f-f145-455c-92f9-e56ee59191eb" name="ManageSchedules" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a977b915-be58-4b66-9f94-9a6284dd865a" />
+          </operation>
+          <operation Id="f4a0e0ba-d5c3-4088-b6b7-e8213dc75c51" name="ManageSwitches" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a7e2652-741a-4a76-9f99-5d9087b17bfd" />
+          </operation>
+          <operation Id="b6dbd8b2-0215-44f6-944c-5717ba588542" name="ManageDevices" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fc79709d-98d0-420c-9be4-ac72968975e4" />
+          </operation>
+          <operation Id="959e7a59-69e2-4b67-b7f8-85984dd08c94" name="ManageZones" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="920484cc-5f3a-497f-ac78-021af8fddf02" />
+          </operation>
+          <operation Id="3536464f-908b-4e73-9721-3fb1ebe42841" name="ManagePriorities" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="503457d7-019c-4a4a-a2d2-8d3cdc94ba6d" />
+          </operation>
+          <operation Id="a0e8f9d5-e452-497c-9074-e98ae4968729" name="UpdateZoneMode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ca191f55-c264-4c3f-9167-4a77d3347779" />
+          </operation>
+          <operation Id="1a781568-a8ad-4288-bf12-5e5ebf13c99f" name="UpdateDeviceMode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8f4bceec-a9ed-4f00-a1f1-12e5bb9b46ec" />
+          </operation>
+          <operation Id="a60418a8-7773-439c-a432-7697e66ca2a3" name="UpdateSwitchMode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a71477ac-c0c2-40ca-8d34-f7f8975a1fe9" />
+          </operation>
+          <operation Id="332591ce-57cc-406f-859f-23665c4444d2" name="LinkScheduleToPriority" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c348b64-0943-403f-82d8-014f10ba97a6" />
+          </operation>
+          <operation Id="434f8ba2-33fc-4fe9-b42e-756db02c3198" name="UnlinkScheduleFromPriority" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="197c9cac-dc72-499d-9cf0-f42f7e8c99a8" />
+          </operation>
+          <operation Id="6f151a41-a121-421e-bebf-d8ff7e1802ab" name="LinkDeviceToSchedule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f6b1f82a-8d50-4243-9101-0f9f5c8245cd" />
+          </operation>
+          <operation Id="251d9f48-1c7b-489f-aa6f-cc6286330bdd" name="UnlinkDeviceFromSchedule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4c85737-5833-46da-a6a7-6e2d0973f89b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a4e9184c-d6c2-4bf8-b293-84a5fc697974" name="DataAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="94943ab4-3b06-4fb6-ad6c-da6025a0715b" />
+        <suppliersInternal>
+          <dependency Id="1c02a331-7415-409c-8536-f7b759ae4a17">
+            <classMoniker Id="f94721fe-60c8-481f-8fa9-a824b517a9a5" LastKnownName="ExceptionHandling" />
+            <elementDefinition Id="2db94677-f117-4e94-98b3-51eb9f9db850" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="f9aa4846-6718-4269-a084-0b2727145184" name="Insert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8c22a2e1-8c13-4b7b-b9a9-37c6218ee64f" />
+          </operation>
+          <operation Id="cc31b6a1-d9da-446d-b783-af7bfa20b938" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="692cec83-ae16-45dc-8f15-b53b677b48cb" />
+          </operation>
+          <operation Id="1aa2cb1f-f500-4cb2-ba70-dce35d5aa0ef" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7e8d05d2-8429-4de8-a83d-91ec951ec767" />
+          </operation>
+          <operation Id="a5c209b7-da88-4787-b914-2a79eb105912" name="Get" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b3d4893-94a0-4353-bef4-724d68fdc52c" />
+          </operation>
+          <operation Id="c4ecc8c2-56ae-4b98-a536-a9865aefe912" name="List" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f59c2420-560c-40e4-8164-7cf40cb947a5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="708e6fbe-88be-4000-a544-adc077505c3f" name="Auditing" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="45c1b2a3-b658-4b4f-ab0c-ce62302d3042" />
+        <suppliersInternal>
+          <dependency Id="0e599668-2229-4f62-8507-2eef8b285e9d">
+            <classMoniker Id="a4e9184c-d6c2-4bf8-b293-84a5fc697974" LastKnownName="DataAccess" />
+            <elementDefinition Id="275ffb44-d827-4adb-8a62-7d31d40829ad" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="552b9aa4-7099-49d3-995c-a5467c4aa4e5" name="LogChanges" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9b443eed-619c-4033-9617-9d126d341ea4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f94721fe-60c8-481f-8fa9-a824b517a9a5" name="ExceptionHandling" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d9383108-ab94-4272-b455-7a8c8b4eaf41" />
+        <ownedOperationsInternal>
+          <operation Id="c7894a88-71c3-4331-b09a-ba28ec92459a" name="BroadcastException" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="60dce84d-99c0-4d81-9e22-be1e5ccf4e22" />
+          </operation>
+          <operation Id="6522fdcd-4f25-4e2f-b879-e5313b7b7069" name="LogException" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc0b59c0-3ec3-4a93-bf9d-3fda62a85633" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fd4ed7be-5b0a-4f18-bd6b-d4c5ac56ce63" name="Reporting" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8832bd6a-1031-4a28-b23f-cfb49cba43fb" />
+        <suppliersInternal>
+          <dependency Id="7b04efba-8a21-450b-b8c6-e0db6839e7a7">
+            <classMoniker Id="a4e9184c-d6c2-4bf8-b293-84a5fc697974" LastKnownName="DataAccess" />
+            <elementDefinition Id="eba821cf-9cc6-49df-9be3-412f109ebb6a" />
+          </dependency>
+          <dependency Id="c19917f7-352a-45f8-bd8a-21806255f0f4">
+            <classMoniker Id="60b1e5dd-d6e5-46ea-99f6-d555e997f752" LastKnownName="Security" />
+            <elementDefinition Id="0e1999a3-6520-41af-bd00-2baf3b956853" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="d78f7d41-fa8c-405a-9654-b8ce36811e01" name="GetReport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48f8708d-bc74-4daf-a89d-3e5643ea2813" />
+          </operation>
+          <operation Id="9fd4d639-f0c2-4486-b1ed-6e4b9684a755" name="SelectReport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="798d1d1b-b69a-45f7-9057-3de6b6fa0a61" />
+          </operation>
+          <operation Id="0c889891-d25f-41c5-b56f-5409c24dee32" name="ListReports" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="17870820-89a2-4bc0-99f4-e5b1da869113" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="17ce58cd-685d-40e4-9bf8-c0fec3b77935" name="MX_BRAVA_Cloud">
+    <elementDefinition Id="86955c84-4a5c-4090-9a25-f4bb31bd9141" />
+  </package>
+</logicalClassDesignerModel>
