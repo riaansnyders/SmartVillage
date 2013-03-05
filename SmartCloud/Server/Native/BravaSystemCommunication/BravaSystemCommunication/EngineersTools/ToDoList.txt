@@ -1,0 +1,17 @@
+Changes: 
+Link "Single Unit" screen to reflect values from "All Units" screen.
+Read Labels for switches from UnitDetails.xml
+
+
+TODO:
+Connect to unit, read "Connect Response", verify BRAVA 
+Request & Receive Status Block (Read switch states)
+Confirmation on MAC address received
+Group poll. 
+Poll Timer.
+
+Import CSV file to SiteConfiguration.xml and UnitDetails.xml
+Change Unit Name field to be configurable to use heading & field value from UnitDetail.xml
+Searchable field (Unit Name) 
+
+

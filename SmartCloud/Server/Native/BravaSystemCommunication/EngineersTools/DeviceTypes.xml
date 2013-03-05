@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceTypes>
+	<NetworkGateway NetworkGatewayType="RESIDENT_ETH" DeviceType="BRAVA_LSV1">
+		<NetworkPorts>
+			<NetworkPort PortIndex="1" PortType="Ethernet_802.1" Protocol="TCPIP" TCPPort="9000"/>
+			<NetworkPort PortIndex="2" PortType="Ethernet_802.1" Protocol="TCPIP" TCPPort="9001"/>
+		</NetworkPorts>
+		<SupportedTransactions>
+			<Transaction TransactionName="RequestType" PortUsed="1" Encoding="Binary"/>
+			<Transaction TransactionName="RequestStateBlock" PortUsed="1" Encoding="Binary"/>
+			<Transaction TransactionName="SwitchbankUpdate" PortUsed="1" Encoding="Binary"/>
+			<Transaction TransactionName="ConfigureAlertMessageRoute" PortUsed="2" Encoding="Binary"/>
+		</SupportedTransactions>
+	</NetworkGateway>
+
+	<SwitchBank SwitchBankType="RESIDENT_8SW" DeviceType="BRAVA_LS8" SwitchCount="8">
+		<Switch BankIndex="1" UserName="Outbuildings"/>
+		<Switch BankIndex="2" UserName="Geyser"/>
+		<Switch BankIndex="3" UserName="Indoor Lights"/>
+		<Switch BankIndex="4" UserName="Air Conditioning"/>
+		<Switch BankIndex="5" UserName="Indoor Plugs"/>
+		<Switch BankIndex="6" UserName="Heaters"/>
+		<Switch BankIndex="7" UserName="Swimming Pool"/>
+		<Switch BankIndex="8" UserName="Outdoor Lights"/>
+	</SwitchBank>
+
+	<SwitchBank SwitchBankType="GENERATOR_8SW" DeviceType="BRAVA_LS8" SwitchCount="3">
+		<Switch BankIndex="1" UserName="GEN START"/>
+		<Switch BankIndex="2" UserName="GEN STOP"/>
+		<Switch BankIndex="3" UserName="GEN OUTPUT ENABLE"/>
+		<Switch BankIndex="4" UserName="unused"/>
+		<Switch BankIndex="5" UserName="unused"/>
+		<Switch BankIndex="6" UserName="unused"/>
+		<Switch BankIndex="7" UserName="unused"/>
+		<Switch BankIndex="8" UserName="unused"/>
+	</SwitchBank>
+
+</DeviceTypes>

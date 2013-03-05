@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EngineersTools.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SiteConfigurationXMLSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">file</Value>
+    </Setting>
+    <Setting Name="SiteConfigurationXMLFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SiteConfiguration.xml</Value>
+    </Setting>
+    <Setting Name="DeviceTypesXMLFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DeviceTypes.xml</Value>
+    </Setting>
+    <Setting Name="UnitDetailsXMLFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UnitDetails.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
