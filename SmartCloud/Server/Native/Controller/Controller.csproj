@@ -50,9 +50,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\BravaUtilities.dll</HintPath>
     </Reference>
-    <Reference Include="lfa.pmgmt.data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="lfa.pmgmt.schedule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assemblies\lfa.pmgmt.data.dll</HintPath>
+      <HintPath>..\Assemblies\lfa.pmgmt.schedule.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -82,16 +83,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessRules\BusinessRules.csproj">
-      <Project>{2D342474-542F-47EF-B728-C398EED87784}</Project>
-      <Name>BusinessRules</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Schedule\Schedule.csproj">
-      <Project>{BC252ED4-CF92-476C-B90D-A7CED6539353}</Project>
-      <Name>Schedule</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
