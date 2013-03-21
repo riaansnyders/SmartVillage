@@ -634,6 +634,29 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
+	/* Zone - List */
+    if (req.url.indexOf('/smartpower/smartcloud/zone/list') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
 	/* Switch - Create */
     if (req.url.indexOf('/smartpower/smartcloud/switch/create') > -1)
     {
@@ -843,6 +866,29 @@ var server = http.createServer(function(req, res) {
 	
 	/* Device - Unlink */
     if (req.url.indexOf('/smartpower/smartcloud/device/unlink') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Device - List */
+    if (req.url.indexOf('/smartpower/smartcloud/device/list') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;
