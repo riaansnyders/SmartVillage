@@ -10,7 +10,7 @@
     using DataObject = lfa.pmgmt.data.DTO.Security;
     #endregion
 
-    public class Device
+    public class User
     {
         #region Public Properties
         public string ConnectionString

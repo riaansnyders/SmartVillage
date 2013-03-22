@@ -74,6 +74,7 @@
     <Compile Include="DTO\Configuration\Status.cs" />
     <Compile Include="DTO\Configuration\Unit.cs" />
     <Compile Include="DTO\Configuration\Zone.cs" />
+    <Compile Include="DTO\DAO\Security\Device.cs" />
     <Compile Include="DTO\DAO\Security\Role.cs" />
     <Compile Include="DTO\DAO\Security\RolePermission.cs" />
     <Compile Include="DTO\DAO\Security\User.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="DTO\Schedule\Device.cs" />
     <Compile Include="DTO\Schedule\Schedule.cs" />
     <Compile Include="DTO\Schedule\Unit.cs" />
+    <Compile Include="DTO\Security\Device.cs" />
     <Compile Include="DTO\Security\Role.cs" />
     <Compile Include="DTO\Security\RolePermission.cs" />
     <Compile Include="DTO\Security\User.cs" />

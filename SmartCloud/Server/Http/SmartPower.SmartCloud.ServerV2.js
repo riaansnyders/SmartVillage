@@ -1,7 +1,3 @@
-/*
-   SmartCloud Server Version 1.0.0
-*/
-
 var http = require('http');
 var util = require('util');
 var url  = require('url');
@@ -13,19 +9,21 @@ var server = http.createServer(function(req, res) {
        var url_parts = url.parse(req.url, true);
        var query = url_parts.query;
 	   
-	   var loadId = query.loadid;  
 	   var token = query.token;
 
 	  if(token != null)
-	  {
-	      res.writeHead(200, {'content-type': 'text/plain'});
-		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['Notification', loadId, token]);
-		  cmd.stdout.on('data', function (data) 
-		  {
-			 res.write(data);
-			 res.end();
-		  });
+	 {
+	  /* Keep as sample for processing */
+	  //var scheduleId = query.scheduleId;
+
+	  //res.writeHead(200, {'content-type': 'text/plain'});
+
+	  //var cmd  = require('child_process').spawn('POC', ['SetSchedule', scheduleId]);
+          //cmd.stdout.on('data', function (data) 
+	  //{
+             //res.write(data);
+	     //res.end();
+  	  //});
 	 }
 	 else
 	 {
@@ -38,26 +36,270 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
+	/* Users - Create */
+    if (req.url.indexOf('/smartpower/smartcloud/users/create') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Users - Edit */
+    if (req.url.indexOf('/smartpower/smartcloud/users/edit') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Users - Delete */
+    if (req.url.indexOf('/smartpower/smartcloud/users/delete') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Users - List */
+    if (req.url.indexOf('/smartpower/smartcloud/users/list') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
 	
 	/* Security - login */
     if (req.url.indexOf('/smartpower/smartcloud/security/login') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;
-	 
-	 var loadId = query.loadid;  
+	   
 	 var token = query.token;
 
 	 if(token != null)
 	 {
-	    res.writeHead(200, {'content-type': 'text/plain'});
-		
-		var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['Login', loadId, token]);
-        cmd.stdout.on('data', function (data) 
-		{
-          res.write(data);
-	      res.end();
-		});
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - logout */
+    if (req.url.indexOf('/smartpower/smartcloud/security/logout') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - AssignRole */
+    if (req.url.indexOf('/smartpower/smartcloud/security/assignrole') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - ListRoles */
+    if (req.url.indexOf('/smartpower/smartcloud/security/listroles') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - RemoveRole */
+    if (req.url.indexOf('/smartpower/smartcloud/security/removerole') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - CreateRole */
+    if (req.url.indexOf('/smartpower/smartcloud/security/createrole') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - EditRole */
+    if (req.url.indexOf('/smartpower/smartcloud/security/editrole') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Security - DeleteRole */
+    if (req.url.indexOf('/smartpower/smartcloud/security/deleterole') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
 	 }
 	 else
 	 {
@@ -185,8 +427,8 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	/* Schedule - List */
-    if (req.url.indexOf('/smartpower/smartcloud/schedule/list') > -1)
+	/* Priority - Create */
+    if (req.url.indexOf('/smartpower/smartcloud/priority/create') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;
@@ -208,8 +450,8 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	/* Priority - Create */
-    if (req.url.indexOf('/smartpower/smartcloud/priority/create') > -1)
+	/* Priority - Edit */
+    if (req.url.indexOf('/smartpower/smartcloud/priority/edit') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;
@@ -254,8 +496,31 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	/* Priority - List */
-    if (req.url.indexOf('/smartpower/smartcloud/priority/list') > -1)
+	/* Priority - Link */
+    if (req.url.indexOf('/smartpower/smartcloud/priority/link') > -1)
+    {
+     var url_parts = url.parse(req.url, true);
+     var query = url_parts.query;
+	   
+	 var token = query.token;
+
+	 if(token != null)
+	 {
+	  
+	 }
+	 else
+	 {
+	   var id = GUID();
+	   res.writeHead(200, {'content-type': 'text/plain'});
+       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
+	   res.write(JSON.stringify(objToJson));
+	   res.end();
+	 }
+      return;
+    }
+	
+	/* Priority - Unlink */
+    if (req.url.indexOf('/smartpower/smartcloud/priority/unlink') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;
@@ -463,29 +728,6 @@ var server = http.createServer(function(req, res) {
 	
 	/* Switch - State */
     if (req.url.indexOf('/smartpower/smartcloud/switch/state') > -1)
-    {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
-	   
-	 var token = query.token;
-
-	 if(token != null)
-	 {
-	  
-	 }
-	 else
-	 {
-	   var id = GUID();
-	   res.writeHead(200, {'content-type': 'text/plain'});
-       var objToJson = { status: "200", identifier: id, exception: "Security token invalid or empty!"};
-	   res.write(JSON.stringify(objToJson));
-	   res.end();
-	 }
-      return;
-    }
-	
-	/* Switch - List */
-    if (req.url.indexOf('/smartpower/smartcloud/switch/list') > -1)
     {
      var url_parts = url.parse(req.url, true);
      var query = url_parts.query;

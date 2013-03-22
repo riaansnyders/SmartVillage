@@ -29,6 +29,7 @@
                 lfa.pmgmt.data.DAO.Eventing.DeviceEvent deviceEvent = null;
                 lfa.pmgmt.data.DAO.Schedule.Schedule scheduleDAO = null;
                 lfa.pmgmt.data.DAO.Schedule.Unit scheduleUnitDOA = null;
+                lfa.pmgmt.data.DAO.Security.Device deviceSecurityDAO = null;
 
                 if (args.Length > 0)
                 {
@@ -38,6 +39,25 @@
 
                     switch (activatedEndpoint)
                     {
+                        #region /* Notification Events */
+                        case "Notification":
+                           Console.WriteLine(token);
+                        break;
+                        #endregion
+
+                        #region /*  Security Events */
+                        case "Login":
+                         deviceSecurityDAO = new lfa.pmgmt.data.DAO.Security.Device();
+                         deviceSecurityDAO.ConnectionString = connectionString;
+                         token = deviceSecurityDAO.Login(token);
+
+                         lfa.pmgmt.data.DTO.Security.Device securityDevice = new lfa.pmgmt.data.DTO.Security.Device();
+                         securityDevice.SessionToken = token;
+
+                         Console.WriteLine(lfa.pmgmt.data.Serializer.Serializer.ToJSON(securityDevice));
+                        break;
+                        #endregion
+
                         #region /* Zone Service Methods */
                         case "CreateZone":
                             zoneDAO = new lfa.pmgmt.data.DAO.Configuration.Zone();
@@ -239,14 +259,12 @@
                         #endregion
 
                         default:
-                        throw new ArgumentOutOfRangeException(@"The defined action or end point has not 
-                                                               been found or is unavailable. Please try again.");
+                        throw new ArgumentOutOfRangeException(@"The defined action or end point has not been found or is unavailable. Please try again.");
                     }
                 }
                 else
                 {
-                    throw new ArgumentNullException(@"No parameters defined for provided 
-                                                      action or end point!");
+                    throw new ArgumentNullException(@"No parameters defined for provided action or end point!");
                 }
             }
             catch (Exception ex)
