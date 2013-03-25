@@ -38,7 +38,7 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	/* Security - login */
+	/* Security - Login */
     if (req.url.indexOf('/smartpower/smartcloud/security/login') > -1)
     {
      var url_parts = url.parse(req.url, true);
@@ -72,14 +72,22 @@ var server = http.createServer(function(req, res) {
 	/* Schedule - Create */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/create') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSchedule', loadId, token,query.name,query.startDateTime,query.endDateTime]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -92,17 +100,25 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	/* Schedule - edit */
+	/* Schedule - Edit */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/edit') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSchedule', loadId, token,query.id,query.name,query.startDateTime,query.endDateTime]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -118,14 +134,22 @@ var server = http.createServer(function(req, res) {
 	/* Schedule - Delete */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/delete') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteSchedule', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -141,14 +165,22 @@ var server = http.createServer(function(req, res) {
 	/* Schedule - Enable */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/enable') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EnableSchedule', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -164,14 +196,22 @@ var server = http.createServer(function(req, res) {
 	/* Schedule - Disable */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/disable') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DisableSchedule', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -187,14 +227,22 @@ var server = http.createServer(function(req, res) {
 	/* Schedule - List */
     if (req.url.indexOf('/smartpower/smartcloud/schedule/list') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListSchedule', loadId, token]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -838,8 +886,6 @@ var server = http.createServer(function(req, res) {
 }).listen(9010);
 
 console.log("server running on port 9010");
-
-
 
 /* Utils */
 function GUID ()
