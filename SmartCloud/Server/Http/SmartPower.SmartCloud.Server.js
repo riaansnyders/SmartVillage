@@ -38,7 +38,6 @@ var server = http.createServer(function(req, res) {
       return;
     }
 	
-	
 	/* Security - login */
     if (req.url.indexOf('/smartpower/smartcloud/security/login') > -1)
     {
@@ -211,14 +210,22 @@ var server = http.createServer(function(req, res) {
 	/* Priority - Create */
     if (req.url.indexOf('/smartpower/smartcloud/priority/create') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreatePriority', loadId, token,query.scheduleId,query.name]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -234,14 +241,22 @@ var server = http.createServer(function(req, res) {
 	/* Priority - Delete */
     if (req.url.indexOf('/smartpower/smartcloud/priority/delete') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeletePriority', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -257,14 +272,22 @@ var server = http.createServer(function(req, res) {
 	/* Priority - List */
     if (req.url.indexOf('/smartpower/smartcloud/priority/list') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListPriority', loadId, token]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -280,14 +303,22 @@ var server = http.createServer(function(req, res) {
 	/* Zone - Create */
     if (req.url.indexOf('/smartpower/smartcloud/zone/create') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateZone', loadId, token,query.name]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -299,18 +330,26 @@ var server = http.createServer(function(req, res) {
 	 }
       return;
     }
-
+	
 	/* Zone - Edit */
     if (req.url.indexOf('/smartpower/smartcloud/zone/edit') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditZone', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -326,14 +365,22 @@ var server = http.createServer(function(req, res) {
 	/* Zone - Delete */
     if (req.url.indexOf('/smartpower/smartcloud/zone/delete') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteZone', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -349,14 +396,22 @@ var server = http.createServer(function(req, res) {
 	/* Zone - State */
     if (req.url.indexOf('/smartpower/smartcloud/zone/state') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetZoneState', loadId, token, query.id,query.state]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -372,14 +427,22 @@ var server = http.createServer(function(req, res) {
 	/* Zone - List */
     if (req.url.indexOf('/smartpower/smartcloud/zone/list') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListZone', loadId, token]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -395,14 +458,22 @@ var server = http.createServer(function(req, res) {
 	/* Switch - Create */
     if (req.url.indexOf('/smartpower/smartcloud/switch/create') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSwitch', loadId, token,query.deviceId,query.name,query.deviceSwitch]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -418,14 +489,22 @@ var server = http.createServer(function(req, res) {
 	/* Switch - Edit */
     if (req.url.indexOf('/smartpower/smartcloud/switch/edit') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSwitch', loadId, token,query.id,query.deviceId,query.name]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -441,14 +520,22 @@ var server = http.createServer(function(req, res) {
 	/* Switch - Delete */
     if (req.url.indexOf('/smartpower/smartcloud/switch/delete') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteSwitch', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -464,14 +551,22 @@ var server = http.createServer(function(req, res) {
 	/* Switch - State */
     if (req.url.indexOf('/smartpower/smartcloud/switch/state') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetSwitchState', loadId, token,query.id,query.state]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -487,14 +582,22 @@ var server = http.createServer(function(req, res) {
 	/* Switch - List */
     if (req.url.indexOf('/smartpower/smartcloud/switch/list') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListDevice', loadId, token]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -510,14 +613,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - Create */
     if (req.url.indexOf('/smartpower/smartcloud/device/create') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateDevice', loadId, token, query.zoneId, query.name,query.address]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -533,14 +644,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - Edit */
     if (req.url.indexOf('/smartpower/smartcloud/device/edit') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditDevice', loadId, token,query.id,query.zoneId,query.name,query.address]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -556,14 +675,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - Delete */
     if (req.url.indexOf('/smartpower/smartcloud/device/delete') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteZone', loadId, token,query.id]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -579,14 +706,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - State */
     if (req.url.indexOf('/smartpower/smartcloud/device/state') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetDeviceState', loadId, token,query.id,query.state]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -602,14 +737,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - Link */
     if (req.url.indexOf('/smartpower/smartcloud/device/link') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['LinkDevice', loadId, token,query.id,query.scheduleId]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -625,14 +768,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - Unlink */
     if (req.url.indexOf('/smartpower/smartcloud/device/unlink') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['UnlinkDevice', loadId, token,query.id,query.scheduleId]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
@@ -648,14 +799,22 @@ var server = http.createServer(function(req, res) {
 	/* Device - List */
     if (req.url.indexOf('/smartpower/smartcloud/device/list') > -1)
     {
-     var url_parts = url.parse(req.url, true);
-     var query = url_parts.query;
+       var url_parts = url.parse(req.url, true);
+       var query = url_parts.query;
 	   
-	 var token = query.token;
+	   var loadId = query.loadid;  
+	   var token = query.token;
 
-	 if(token != null)
-	 {
-	  
+	  if(token != null)
+	  {
+	      res.writeHead(200, {'content-type': 'text/plain'});
+		  
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeviceList', loadId, token]);
+		  cmd.stdout.on('data', function (data) 
+		  {
+			 res.write(data);
+			 res.end();
+		  });
 	 }
 	 else
 	 {
