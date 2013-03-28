@@ -61,13 +61,14 @@
                         #region /* Zone Service Methods */
                         case "CreateZone":
                             zoneDAO = new lfa.pmgmt.data.DAO.Configuration.Zone();
-                            zoneDAO.ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
-                            zoneDAO.Insert(args[3], DateTime.Now);
+                            zoneDAO.ConnectionString = connectionString;
+                            zoneDAO.Insert(args[3], DateTime.Now,args[4]);
 
                             Console.WriteLine(HandleOK("zone/create"));
                         break;
                         case "EditZone":
                             zoneDAO = new lfa.pmgmt.data.DAO.Configuration.Zone();
+                            zoneDAO.ConnectionString = connectionString;
                             zoneDAO.Update(int.Parse(args[3]), args[4]);
 
                             Console.WriteLine(HandleOK("zone/edit"));

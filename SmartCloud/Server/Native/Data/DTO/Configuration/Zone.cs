@@ -33,6 +33,12 @@
             get;
             set;
         }
+
+        public string SmartCloudSerial
+        {
+            get;
+            set;
+        }
         #endregion
     }
 }

@@ -21,15 +21,15 @@
         #endregion
 
         #region Insert
-        public void Insert(string Name, DateTime DateAdded)
+        public void Insert(string Name, DateTime DateAdded, string serial)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlQuery = "Exec [Configuration].[InsertZone] '{0}','{1}' ";
+                string sqlQuery = "Exec [Configuration].[InsertZone] '{0}','{1}','{2}'";
 
-                using (SqlCommand command = new SqlCommand(string.Format(sqlQuery, Name, DateAdded.ToString("yyyy/MM/dd")), connection))
+                using (SqlCommand command = new SqlCommand(string.Format(sqlQuery, Name, DateAdded.ToString("yyyy/MM/dd"),serial), connection))
                 {
                     command.ExecuteNonQuery();
                 }

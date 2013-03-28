@@ -361,7 +361,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateZone', loadId, token,query.name]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateZone', loadId, token,query.name,query.serial]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -392,7 +392,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditZone', loadId, token,query.id]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditZone', loadId, token,query.id,query.name]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
