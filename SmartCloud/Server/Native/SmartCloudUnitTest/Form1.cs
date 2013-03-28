@@ -101,6 +101,70 @@ namespace SmartCloudUnitTest
                                  MessageBoxIcon.Error);
             }
         }
+
+        //[UT_LIST]
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "zone/list?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //[UT_SetStateOn]
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "zone/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&state=on&serial=" + txtZoneDescription.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //[UT_SetStateOff]
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "zone/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&state=off&serial=" + txtZoneDescription.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Device (Units as per Val Riche)
+
         #endregion
 
         #region Private Methods
@@ -128,5 +192,26 @@ namespace SmartCloudUnitTest
             txtQueryResult.Text = Response;
         }
         #endregion
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+       
+
+       
     }
 }

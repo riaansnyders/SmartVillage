@@ -41,25 +41,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtQueryResult = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtZoneDescription = new System.Windows.Forms.TextBox();
+            this.txtZoneName = new System.Windows.Forms.TextBox();
+            this.txtZoneId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.b = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtZoneId = new System.Windows.Forms.TextBox();
-            this.txtZoneName = new System.Windows.Forms.TextBox();
-            this.txtZoneDescription = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtZoneState = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtServiceBaseURL
@@ -171,7 +172,7 @@
             this.groupBox3.Controls.Add(this.txtQueryResult);
             this.groupBox3.Location = new System.Drawing.Point(774, 23);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 461);
+            this.groupBox3.Size = new System.Drawing.Size(415, 573);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Query Results";
@@ -182,163 +183,165 @@
             this.txtQueryResult.Location = new System.Drawing.Point(14, 35);
             this.txtQueryResult.Multiline = true;
             this.txtQueryResult.Name = "txtQueryResult";
-            this.txtQueryResult.Size = new System.Drawing.Size(384, 420);
+            this.txtQueryResult.Size = new System.Drawing.Size(384, 519);
             this.txtQueryResult.TabIndex = 0;
             // 
-            // groupBox4
+            // tabControl1
             // 
-            this.groupBox4.Controls.Add(this.txtZoneState);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.txtZoneDescription);
-            this.groupBox4.Controls.Add(this.txtZoneName);
-            this.groupBox4.Controls.Add(this.txtZoneId);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.b);
-            this.groupBox4.Location = new System.Drawing.Point(31, 306);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(702, 222);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Zone";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(31, 296);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(702, 304);
+            this.tabControl1.TabIndex = 6;
             // 
-            // label5
+            // tabPage1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Id: ";
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.txtZoneDescription);
+            this.tabPage1.Controls.Add(this.txtZoneName);
+            this.tabPage1.Controls.Add(this.txtZoneId);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.b);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(694, 278);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Zones";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // b
+            // tabPage2
             // 
-            this.b.Location = new System.Drawing.Point(107, 183);
-            this.b.Name = "b";
-            this.b.Size = new System.Drawing.Size(75, 23);
-            this.b.TabIndex = 0;
-            this.b.Text = "Create";
-            this.b.UseVisualStyleBackColor = true;
-            this.b.Click += new System.EventHandler(this.button1_Click_1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(694, 343);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Devices";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // button5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Name: ";
+            this.button5.Location = new System.Drawing.Point(513, 172);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(92, 23);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "SetState OFF";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // button4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 110);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Serial :";
+            this.button4.Location = new System.Drawing.Point(432, 172);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "SetState ON";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // txtZoneId
+            // button3
             // 
-            this.txtZoneId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZoneId.Location = new System.Drawing.Point(107, 18);
-            this.txtZoneId.Name = "txtZoneId";
-            this.txtZoneId.Size = new System.Drawing.Size(572, 20);
-            this.txtZoneId.TabIndex = 4;
+            this.button3.Location = new System.Drawing.Point(351, 172);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "List";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // txtZoneName
+            // button2
             // 
-            this.txtZoneName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZoneName.Location = new System.Drawing.Point(107, 65);
-            this.txtZoneName.Name = "txtZoneName";
-            this.txtZoneName.Size = new System.Drawing.Size(572, 20);
-            this.txtZoneName.TabIndex = 5;
+            this.button2.Location = new System.Drawing.Point(270, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(189, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
             // txtZoneDescription
             // 
             this.txtZoneDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZoneDescription.Location = new System.Drawing.Point(107, 108);
+            this.txtZoneDescription.Location = new System.Drawing.Point(108, 115);
             this.txtZoneDescription.Name = "txtZoneDescription";
             this.txtZoneDescription.Size = new System.Drawing.Size(572, 20);
-            this.txtZoneDescription.TabIndex = 6;
+            this.txtZoneDescription.TabIndex = 18;
             // 
-            // button1
+            // txtZoneName
             // 
-            this.button1.Location = new System.Drawing.Point(188, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.txtZoneName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZoneName.Location = new System.Drawing.Point(108, 72);
+            this.txtZoneName.Name = "txtZoneName";
+            this.txtZoneName.Size = new System.Drawing.Size(572, 20);
+            this.txtZoneName.TabIndex = 17;
             // 
-            // button2
+            // txtZoneId
             // 
-            this.button2.Location = new System.Drawing.Point(269, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txtZoneId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZoneId.Location = new System.Drawing.Point(108, 25);
+            this.txtZoneId.Name = "txtZoneId";
+            this.txtZoneId.Size = new System.Drawing.Size(572, 20);
+            this.txtZoneId.TabIndex = 16;
             // 
-            // button3
+            // label7
             // 
-            this.button3.Location = new System.Drawing.Point(350, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Enable";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Serial :";
             // 
-            // button4
+            // label6
             // 
-            this.button4.Location = new System.Drawing.Point(431, 183);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Disable";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Name: ";
             // 
-            // button5
+            // label5
             // 
-            this.button5.Location = new System.Drawing.Point(512, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "SetState";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Id: ";
             // 
-            // label8
+            // b
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "State:";
-            // 
-            // txtZoneState
-            // 
-            this.txtZoneState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZoneState.Location = new System.Drawing.Point(107, 148);
-            this.txtZoneState.Name = "txtZoneState";
-            this.txtZoneState.Size = new System.Drawing.Size(572, 20);
-            this.txtZoneState.TabIndex = 13;
+            this.b.Location = new System.Drawing.Point(108, 172);
+            this.b.Name = "b";
+            this.b.Size = new System.Drawing.Size(75, 23);
+            this.b.TabIndex = 12;
+            this.b.Text = "Create";
+            this.b.UseVisualStyleBackColor = true;
+            this.b.Click += new System.EventHandler(this.b_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 596);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(1213, 619);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -355,8 +358,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,21 +381,21 @@
         private System.Windows.Forms.Button btnUTLogins;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtQueryResult;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button b;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtZoneDescription;
         private System.Windows.Forms.TextBox txtZoneName;
         private System.Windows.Forms.TextBox txtZoneId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtZoneState;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button b;
     }
 }
 

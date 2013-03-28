@@ -84,7 +84,7 @@
                             string zoneEvent = "ZoneState : {" + args[3] + "," + args[4] + "}";
                             deviceEvent = new lfa.pmgmt.data.DAO.Eventing.DeviceEvent();
                             deviceEvent.ConnectionString = connectionString;
-                            deviceEvent.Insert(args[4], zoneEvent);
+                            deviceEvent.Insert(args[5], zoneEvent);
 
                             Console.WriteLine(HandleOK("zone/state"));
                         break;

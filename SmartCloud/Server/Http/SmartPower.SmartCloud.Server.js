@@ -454,7 +454,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetZoneState', loadId, token, query.id,query.state]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetZoneState', loadId, token, query.id,query.state,query.serial]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
