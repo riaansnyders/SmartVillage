@@ -671,7 +671,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateDevice', loadId, token, query.zoneId, query.name,query.address]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateDevice', loadId, token, query.zoneid, query.name,query.address]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -702,7 +702,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditDevice', loadId, token,query.id,query.zoneId,query.name,query.address]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditDevice', loadId, token,query.id,query.zoneid,query.name,query.address]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -733,7 +733,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteZone', loadId, token,query.id]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeleteDevice', loadId, token,query.id]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -764,7 +764,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetDeviceState', loadId, token,query.id,query.state]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetDeviceState', loadId, token,query.id,query.state,query.serial]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -795,7 +795,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['LinkDevice', loadId, token,query.id,query.scheduleId]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['LinkDevice', loadId, token,query.id,query.scheduleid]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -826,7 +826,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['UnlinkDevice', loadId, token,query.id,query.scheduleId]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['UnlinkDevice', loadId, token,query.id,query.scheduleid]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -857,7 +857,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['DeviceList', loadId, token]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListDevice', loadId, token, query.zoneid]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);

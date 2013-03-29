@@ -116,6 +116,7 @@
                         break;
                         case "EditDevice":
                             unitDOA = new lfa.pmgmt.data.DAO.Configuration.Unit();
+                            unitDOA.ConnectionString = connectionString;
                             unitDOA.Update(int.Parse(args[3]), int.Parse(args[4]), args[5], args[6]);
 
                             Console.WriteLine(HandleOK("device/edit"));
@@ -124,7 +125,7 @@
                             string devicesEvent = "DeviceState : {" + args[3] + "," + args[4] + "}";
                             deviceEvent = new lfa.pmgmt.data.DAO.Eventing.DeviceEvent();
                             deviceEvent.ConnectionString = connectionString;
-                            deviceEvent.Insert(args[4], devicesEvent);
+                            deviceEvent.Insert(args[5], devicesEvent);
 
                             Console.WriteLine(HandleOK("device/state"));
                         break;
@@ -177,7 +178,7 @@
                             string switchEvent = "SwitchState : {" + args[3] + "," + args[4] + "}";
                             deviceEvent = new lfa.pmgmt.data.DAO.Eventing.DeviceEvent();
                             deviceEvent.ConnectionString = connectionString;
-                            deviceEvent.Insert(args[4], switchEvent);
+                            deviceEvent.Insert(args[5], switchEvent);
 
                             Console.WriteLine(HandleOK("switch/state"));
                         break;

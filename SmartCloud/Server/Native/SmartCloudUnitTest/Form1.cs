@@ -42,8 +42,28 @@ namespace SmartCloudUnitTest
         #endregion
 
         #region Zones
-        //[UT_Create]
-        private void button1_Click_1(object sender, EventArgs e)
+        //UT_ZONE_EDIT
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "zone/edit?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&name=" + txtZoneName.Text + "&serial=" + txtZoneDescription.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_ZONE_CREATE
+        private void b_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,28 +82,8 @@ namespace SmartCloudUnitTest
             }
         }
 
-        //[UT_Edit]
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            try
-            {
-                string baseURL = txtServiceBaseURL.Text;
-                string securityURL = "zone/edit?loadid=1&";
-
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&name=" + txtZoneName.Text;
-
-                PostToService(requestURL);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("The following exception has been raised: " + ex.Message,
-                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
-                                 MessageBoxIcon.Error);
-            }
-        }
-
-        //[UT_Delete]
-        private void button2_Click(object sender, EventArgs e)
+        //UT_ZONE_DELETE
+        private void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -102,8 +102,8 @@ namespace SmartCloudUnitTest
             }
         }
 
-        //[UT_LIST]
-        private void button3_Click(object sender, EventArgs e)
+        //UT_ZONE_LIST
+        private void button3_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -122,8 +122,8 @@ namespace SmartCloudUnitTest
             }
         }
 
-        //[UT_SetStateOn]
-        private void button4_Click(object sender, EventArgs e)
+        //UT_ZONE_STATE_ON
+        private void button4_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -142,8 +142,8 @@ namespace SmartCloudUnitTest
             }
         }
 
-        //[UT_SetStateOff]
-        private void button5_Click(object sender, EventArgs e)
+        //UT_ZONE_STATE_OFF
+        private void button5_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -164,8 +164,198 @@ namespace SmartCloudUnitTest
         #endregion
 
         #region Device (Units as per Val Riche)
+        //UT_DEVICE_CREATE
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "device/create?loadid=1&";
 
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&zoneid=" + txtDeviceZoneId.Text + "&name=" + txtDeviceName.Text + "&address=" + txtDeviceAddress.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DEVICE_EDIT
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "device/edit?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&zoneid=" + txtDeviceZoneId.Text + "&name=" + txtDeviceName.Text + "&address=" + txtDeviceAddress.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DEVICE_DELETE
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "device/delete?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DEVICE_LIST
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDeviceZoneId.Text))
+            {
+                MessageBox.Show("Please provide a zone id",
+                                 "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    string baseURL = txtServiceBaseURL.Text;
+                    string securityURL = "device/list?loadid=1&";
+
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&zoneid=" + txtDeviceZoneId.Text;
+
+                    PostToService(requestURL);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                    "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //UT_DEVICE_STATE_ON
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "device/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&state=on&serial=" + txtSmartCloudSerial.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DEVICE_STATE_OFF
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "device/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&state=off&serial=" + txtSmartCloudSerial.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DEVICE_LINK
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDeviceScheduleId.Text))
+            {
+                MessageBox.Show("Please provide a schedule id!",
+                                 "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    string baseURL = txtServiceBaseURL.Text;
+                    string securityURL = "device/link?loadid=1&";
+
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&scheduleId=" + txtDeviceScheduleId.Text;
+
+                    PostToService(requestURL);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                    "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //UT_DEVICE_UNLINK
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtDeviceScheduleId.Text))
+            {
+                MessageBox.Show("Please provide a schedule id!",
+                                 "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    string baseURL = txtServiceBaseURL.Text;
+                    string securityURL = "device/link?loadid=1&";
+
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&scheduleId=" + txtDeviceScheduleId.Text;
+
+                    PostToService(requestURL);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                    "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                }
+            }
+        }
         #endregion
+
+        #region Switches
+        #endregion
+
 
         #region Private Methods
         private void PostToService(string requestURL)
@@ -193,20 +383,20 @@ namespace SmartCloudUnitTest
         }
         #endregion
 
-        private void button1_Click_3(object sender, EventArgs e)
-        {
+        
 
-        }
 
-        private void b_Click(object sender, EventArgs e)
-        {
+        
+       
 
-        }
+    
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+        
+       
 
-        }
+        
+
+       
 
        
 
