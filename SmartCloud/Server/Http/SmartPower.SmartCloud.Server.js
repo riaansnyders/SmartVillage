@@ -516,7 +516,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSwitch', loadId, token,query.deviceId,query.name,query.deviceSwitch]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSwitch', loadId, token,query.deviceid,query.name,query.deviceswitch]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -547,7 +547,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSwitch', loadId, token,query.id,query.deviceId,query.name]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSwitch', loadId, token,query.id,query.deviceid,query.name]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -609,7 +609,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetSwitchState', loadId, token,query.id,query.state]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['SetSwitchState', loadId, token,query.id,query.state,query.serial]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -640,7 +640,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListDevice', loadId, token]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['ListSwitches', loadId, token,query.deviceid]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);

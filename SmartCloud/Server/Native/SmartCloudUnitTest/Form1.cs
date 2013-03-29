@@ -354,6 +354,126 @@ namespace SmartCloudUnitTest
         #endregion
 
         #region Switches
+        //UT_CREATE_SWITCH
+        private void button19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/create?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&deviceid=" + txtSwitchDeviceId.Text + "&name=" + txtSwitchName.Text + "&deviceswitch=" + txtSwitch.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_EDIT_SWITCH
+        private void button18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/edit?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&deviceid=" + txtSwitchDeviceId.Text + "&name=" + txtSwitchName.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_DELETE_SWITCH
+        private void button17_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/delete?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_LIST_SWITCH
+        private void button16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/list?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&deviceid=" + txtSwitchDeviceId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_SWITCH_STATEON
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&state=on&serial=" + txtSmartCloudSerial.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_SWITCH_STATEOFF
+        private void button14_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "switch/state?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&state=off&serial=" + txtSmartCloudSerial.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
         #endregion
 
 
@@ -382,6 +502,12 @@ namespace SmartCloudUnitTest
             txtQueryResult.Text = Response;
         }
         #endregion
+
+       
+       
+
+        
+        
 
         
 

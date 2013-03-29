@@ -56,9 +56,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.b = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.txtDeviceAddress = new System.Windows.Forms.TextBox();
+            this.txtDeviceName = new System.Windows.Forms.TextBox();
+            this.txtDeviceScheduleId = new System.Windows.Forms.TextBox();
+            this.txtDeviceZoneId = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -67,16 +74,7 @@
             this.txtDeviceId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDeviceZoneId = new System.Windows.Forms.TextBox();
-            this.txtDeviceScheduleId = new System.Windows.Forms.TextBox();
-            this.txtDeviceName = new System.Windows.Forms.TextBox();
-            this.txtDeviceAddress = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtSwitch = new System.Windows.Forms.TextBox();
             this.txtSwitchName = new System.Windows.Forms.TextBox();
             this.txtSwitchDeviceId = new System.Windows.Forms.TextBox();
@@ -91,6 +89,8 @@
             this.txtSwitchId = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -400,46 +400,93 @@
             this.tabPage2.Text = "Devices (Units)";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // button13
             // 
-            this.tabPage3.Controls.Add(this.txtSwitch);
-            this.tabPage3.Controls.Add(this.txtSwitchName);
-            this.tabPage3.Controls.Add(this.txtSwitchDeviceId);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.button16);
-            this.tabPage3.Controls.Add(this.button17);
-            this.tabPage3.Controls.Add(this.button18);
-            this.tabPage3.Controls.Add(this.txtSwitchId);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.button19);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(694, 278);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Switches";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.button13.Location = new System.Drawing.Point(601, 227);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(87, 23);
+            this.button13.TabIndex = 41;
+            this.button13.Text = "Unlink";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // tabPage4
+            // button12
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(694, 278);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Priority";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.button12.Location = new System.Drawing.Point(525, 227);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(70, 23);
+            this.button12.TabIndex = 40;
+            this.button12.Text = "Link";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // tabPage5
+            // txtDeviceAddress
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(694, 278);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Schedule";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.txtDeviceAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeviceAddress.Location = new System.Drawing.Point(103, 174);
+            this.txtDeviceAddress.Name = "txtDeviceAddress";
+            this.txtDeviceAddress.Size = new System.Drawing.Size(572, 20);
+            this.txtDeviceAddress.TabIndex = 39;
+            // 
+            // txtDeviceName
+            // 
+            this.txtDeviceName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeviceName.Location = new System.Drawing.Point(103, 137);
+            this.txtDeviceName.Name = "txtDeviceName";
+            this.txtDeviceName.Size = new System.Drawing.Size(572, 20);
+            this.txtDeviceName.TabIndex = 38;
+            // 
+            // txtDeviceScheduleId
+            // 
+            this.txtDeviceScheduleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeviceScheduleId.Location = new System.Drawing.Point(103, 101);
+            this.txtDeviceScheduleId.Name = "txtDeviceScheduleId";
+            this.txtDeviceScheduleId.Size = new System.Drawing.Size(572, 20);
+            this.txtDeviceScheduleId.TabIndex = 37;
+            // 
+            // txtDeviceZoneId
+            // 
+            this.txtDeviceZoneId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeviceZoneId.Location = new System.Drawing.Point(103, 60);
+            this.txtDeviceZoneId.Name = "txtDeviceZoneId";
+            this.txtDeviceZoneId.Size = new System.Drawing.Size(572, 20);
+            this.txtDeviceZoneId.TabIndex = 36;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 176);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "IP Address:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 139);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Name:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Schedule Id: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Zone Id:";
             // 
             // button6
             // 
@@ -518,93 +565,28 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // label9
+            // tabPage3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 62);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Zone Id:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 13);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Schedule Id: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 139);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Name:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 176);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "IP Address:";
-            // 
-            // txtDeviceZoneId
-            // 
-            this.txtDeviceZoneId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeviceZoneId.Location = new System.Drawing.Point(103, 60);
-            this.txtDeviceZoneId.Name = "txtDeviceZoneId";
-            this.txtDeviceZoneId.Size = new System.Drawing.Size(572, 20);
-            this.txtDeviceZoneId.TabIndex = 36;
-            // 
-            // txtDeviceScheduleId
-            // 
-            this.txtDeviceScheduleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeviceScheduleId.Location = new System.Drawing.Point(103, 101);
-            this.txtDeviceScheduleId.Name = "txtDeviceScheduleId";
-            this.txtDeviceScheduleId.Size = new System.Drawing.Size(572, 20);
-            this.txtDeviceScheduleId.TabIndex = 37;
-            // 
-            // txtDeviceName
-            // 
-            this.txtDeviceName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeviceName.Location = new System.Drawing.Point(103, 137);
-            this.txtDeviceName.Name = "txtDeviceName";
-            this.txtDeviceName.Size = new System.Drawing.Size(572, 20);
-            this.txtDeviceName.TabIndex = 38;
-            // 
-            // txtDeviceAddress
-            // 
-            this.txtDeviceAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDeviceAddress.Location = new System.Drawing.Point(103, 174);
-            this.txtDeviceAddress.Name = "txtDeviceAddress";
-            this.txtDeviceAddress.Size = new System.Drawing.Size(572, 20);
-            this.txtDeviceAddress.TabIndex = 39;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(525, 227);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(70, 23);
-            this.button12.TabIndex = 40;
-            this.button12.Text = "Link";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(601, 227);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(87, 23);
-            this.button13.TabIndex = 41;
-            this.button13.Text = "Unlink";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.tabPage3.Controls.Add(this.txtSwitch);
+            this.tabPage3.Controls.Add(this.txtSwitchName);
+            this.tabPage3.Controls.Add(this.txtSwitchDeviceId);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.button14);
+            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.button17);
+            this.tabPage3.Controls.Add(this.button18);
+            this.tabPage3.Controls.Add(this.txtSwitchId);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.button19);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(694, 278);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Switches";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // txtSwitch
             // 
@@ -665,6 +647,7 @@
             this.button14.TabIndex = 46;
             this.button14.Text = "SetState OFF";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -674,6 +657,7 @@
             this.button15.TabIndex = 45;
             this.button15.Text = "SetState ON";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -683,6 +667,7 @@
             this.button16.TabIndex = 44;
             this.button16.Text = "List";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -692,6 +677,7 @@
             this.button17.TabIndex = 43;
             this.button17.Text = "Delete";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -701,6 +687,7 @@
             this.button18.TabIndex = 42;
             this.button18.Text = "Edit";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // txtSwitchId
             // 
@@ -727,6 +714,25 @@
             this.button19.TabIndex = 39;
             this.button19.Text = "Create";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(694, 278);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Priority";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(694, 278);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Schedule";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
