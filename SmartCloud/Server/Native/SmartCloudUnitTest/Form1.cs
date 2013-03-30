@@ -50,7 +50,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "zone/edit?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&name=" + txtZoneName.Text + "&serial=" + txtZoneDescription.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + 
+                                    "&name=" + txtZoneName.Text + "&serial=" + txtZoneDescription.Text;
 
                 PostToService(requestURL);
             }
@@ -70,7 +71,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "zone/create?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&name=" + txtZoneName.Text + "&serial=" + txtZoneDescription.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&name=" + txtZoneName.Text + 
+                                    "&serial=" + txtZoneDescription.Text;
 
                 PostToService(requestURL);
             }
@@ -130,7 +132,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "zone/state?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&state=on&serial=" + txtZoneDescription.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + 
+                                    "&state=on&serial=" + txtZoneDescription.Text;
 
                 PostToService(requestURL);
             }
@@ -150,7 +153,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "zone/state?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + "&state=off&serial=" + txtZoneDescription.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtZoneId.Text + 
+                                    "&state=off&serial=" + txtZoneDescription.Text;
 
                 PostToService(requestURL);
             }
@@ -192,7 +196,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "device/edit?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&zoneid=" + txtDeviceZoneId.Text + "&name=" + txtDeviceName.Text + "&address=" + txtDeviceAddress.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + 
+                                    "&zoneid=" + txtDeviceZoneId.Text + "&name=" + txtDeviceName.Text + "&address=" + txtDeviceAddress.Text;
 
                 PostToService(requestURL);
             }
@@ -261,7 +266,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "device/state?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&state=on&serial=" + txtSmartCloudSerial.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + 
+                                    "&state=on&serial=" + txtSmartCloudSerial.Text;
 
                 PostToService(requestURL);
             }
@@ -309,7 +315,8 @@ namespace SmartCloudUnitTest
                     string baseURL = txtServiceBaseURL.Text;
                     string securityURL = "device/link?loadid=1&";
 
-                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&scheduleId=" + txtDeviceScheduleId.Text;
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + 
+                                        "&scheduleId=" + txtDeviceScheduleId.Text;
 
                     PostToService(requestURL);
                 }
@@ -339,7 +346,8 @@ namespace SmartCloudUnitTest
                     string baseURL = txtServiceBaseURL.Text;
                     string securityURL = "device/link?loadid=1&";
 
-                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + "&scheduleId=" + txtDeviceScheduleId.Text;
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtDeviceId.Text + 
+                                        "&scheduleId=" + txtDeviceScheduleId.Text;
 
                     PostToService(requestURL);
                 }
@@ -382,7 +390,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "switch/edit?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&deviceid=" + txtSwitchDeviceId.Text + "&name=" + txtSwitchName.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + 
+                                    "&deviceid=" + txtSwitchDeviceId.Text + "&name=" + txtSwitchName.Text;
 
                 PostToService(requestURL);
             }
@@ -442,7 +451,8 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "switch/state?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&state=on&serial=" + txtSmartCloudSerial.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + 
+                                    "&state=on&serial=" + txtSmartCloudSerial.Text;
 
                 PostToService(requestURL);
             }
@@ -462,7 +472,61 @@ namespace SmartCloudUnitTest
                 string baseURL = txtServiceBaseURL.Text;
                 string securityURL = "switch/state?loadid=1&";
 
-                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + "&state=off&serial=" + txtSmartCloudSerial.Text;
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtSwitchId.Text + 
+                                    "&state=off&serial=" + txtSmartCloudSerial.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Priority
+        //UT_PRIORITY_CREATE
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtPriorityScheduleId.Text))
+            {
+                MessageBox.Show("Please provide a schedule id!",
+                                 "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    string baseURL = txtServiceBaseURL.Text;
+                    string securityURL = "priority/create?loadid=1&";
+
+                    string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&scheduleid=" + txtPriorityScheduleId.Text +
+                                        "&name=" + txtPriorityName.Text;
+
+                    PostToService(requestURL);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                    "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //UT_PRIORITY_DELETE
+        private void button21_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "priority/delete?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtPriorityId.Text;
 
                 PostToService(requestURL);
             }
@@ -474,8 +538,26 @@ namespace SmartCloudUnitTest
             }
         }
 
-        #endregion
+        //UT_PRIORITY_LIST
+        private void button20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "priority/list?loadid=1&";
 
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+        #endregion
 
         #region Private Methods
         private void PostToService(string requestURL)
@@ -502,6 +584,8 @@ namespace SmartCloudUnitTest
             txtQueryResult.Text = Response;
         }
         #endregion
+
+       
 
        
        

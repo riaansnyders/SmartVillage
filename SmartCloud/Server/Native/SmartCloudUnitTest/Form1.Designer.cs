@@ -91,6 +91,15 @@
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtPriorityName = new System.Windows.Forms.TextBox();
+            this.txtPriorityScheduleId = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.txtPriorityId = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,6 +107,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtServiceBaseURL
@@ -718,6 +728,15 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txtPriorityName);
+            this.tabPage4.Controls.Add(this.txtPriorityScheduleId);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.button20);
+            this.tabPage4.Controls.Add(this.button21);
+            this.tabPage4.Controls.Add(this.txtPriorityId);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.button22);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(694, 278);
@@ -733,6 +752,87 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Schedule";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtPriorityName
+            // 
+            this.txtPriorityName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPriorityName.Location = new System.Drawing.Point(102, 105);
+            this.txtPriorityName.Name = "txtPriorityName";
+            this.txtPriorityName.Size = new System.Drawing.Size(572, 20);
+            this.txtPriorityName.TabIndex = 60;
+            // 
+            // txtPriorityScheduleId
+            // 
+            this.txtPriorityScheduleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPriorityScheduleId.Location = new System.Drawing.Point(102, 64);
+            this.txtPriorityScheduleId.Name = "txtPriorityScheduleId";
+            this.txtPriorityScheduleId.Size = new System.Drawing.Size(572, 20);
+            this.txtPriorityScheduleId.TabIndex = 59;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 107);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "Name :";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(21, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 13);
+            this.label18.TabIndex = 57;
+            this.label18.Text = "Schedule Id:";
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(263, 172);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 56;
+            this.button20.Text = "List";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(183, 172);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.TabIndex = 55;
+            this.button21.Text = "Delete";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // txtPriorityId
+            // 
+            this.txtPriorityId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPriorityId.Location = new System.Drawing.Point(102, 24);
+            this.txtPriorityId.Name = "txtPriorityId";
+            this.txtPriorityId.Size = new System.Drawing.Size(572, 20);
+            this.txtPriorityId.TabIndex = 54;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(21, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(22, 13);
+            this.label19.TabIndex = 53;
+            this.label19.Text = "Id: ";
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(103, 172);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 52;
+            this.button22.Text = "Create";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // Form1
             // 
@@ -763,6 +863,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,6 +935,15 @@
         private System.Windows.Forms.TextBox txtSwitchId;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.TextBox txtPriorityName;
+        private System.Windows.Forms.TextBox txtPriorityScheduleId;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox txtPriorityId;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button22;
     }
 }
 
