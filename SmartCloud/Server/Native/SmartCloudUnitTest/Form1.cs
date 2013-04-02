@@ -559,6 +559,131 @@ namespace SmartCloudUnitTest
         }
         #endregion
 
+        #region Schedule
+        //UT_Schedule_Create
+        private void button28_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/create?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&name=" + txtScheduleName.Text +
+                                                            "&startdatetime=" + txtStartDate.Text + "&enddatetime=" + txtEndDate.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_Schedule_Edit
+        private void button27_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/edit?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtScheduleId.Text +
+                                                            "&name=" + txtScheduleName.Text + "&startdatetime=" + txtStartDate.Text +
+                                                            "&enddatetime=" + txtEndDate.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_Schedule_Delete
+        private void button26_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/delete?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtScheduleId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_Schedule_List
+        private void button25_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/list?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_Schedule_Enable
+        private void button24_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/enable?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtScheduleId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+
+        //UT_Schedule_Disable
+        private void button23_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string baseURL = txtServiceBaseURL.Text;
+                string securityURL = "schedule/disable?loadid=1&";
+
+                string requestURL = baseURL + securityURL + "token=" + txtSecurityToken.Text + "&id=" + txtScheduleId.Text;
+
+                PostToService(requestURL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following exception has been raised: " + ex.Message,
+                                "SmartPower SmartCloud UnitTester", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
         #region Private Methods
         private void PostToService(string requestURL)
         {
@@ -584,34 +709,5 @@ namespace SmartCloudUnitTest
             txtQueryResult.Text = Response;
         }
         #endregion
-
-       
-
-       
-       
-
-        
-        
-
-        
-
-
-        
-       
-
-    
-
-        
-       
-
-        
-
-       
-
-       
-
-       
-
-       
     }
 }

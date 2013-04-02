@@ -82,7 +82,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSchedule', loadId, token,query.name,query.startDateTime,query.endDateTime]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['CreateSchedule', loadId, token,query.name,query.startdatetime,query.enddatetime]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);
@@ -113,7 +113,7 @@ var server = http.createServer(function(req, res) {
 	  {
 	      res.writeHead(200, {'content-type': 'text/plain'});
 		  
-		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSchedule', loadId, token,query.id,query.name,query.startDateTime,query.endDateTime]);
+		  var cmd  = require('child_process').spawn('C:\\Smartpower\\smartcloud\\Adapter.exe', ['EditSchedule', loadId, token,query.id,query.name,query.startdatetime,query.enddatetime]);
 		  cmd.stdout.on('data', function (data) 
 		  {
 			 res.write(data);

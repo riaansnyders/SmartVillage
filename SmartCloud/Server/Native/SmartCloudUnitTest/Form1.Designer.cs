@@ -90,7 +90,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.txtPriorityName = new System.Windows.Forms.TextBox();
             this.txtPriorityScheduleId = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -100,6 +99,21 @@
             this.txtPriorityId = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.button22 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtScheduleName = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.txtScheduleId = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button28 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,6 +122,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtServiceBaseURL
@@ -744,15 +759,6 @@
             this.tabPage4.Text = "Priority";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(694, 278);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Schedule";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // txtPriorityName
             // 
             this.txtPriorityName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -834,6 +840,157 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.txtEndDate);
+            this.tabPage5.Controls.Add(this.txtStartDate);
+            this.tabPage5.Controls.Add(this.txtScheduleName);
+            this.tabPage5.Controls.Add(this.label20);
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.label22);
+            this.tabPage5.Controls.Add(this.button23);
+            this.tabPage5.Controls.Add(this.button24);
+            this.tabPage5.Controls.Add(this.button25);
+            this.tabPage5.Controls.Add(this.button26);
+            this.tabPage5.Controls.Add(this.button27);
+            this.tabPage5.Controls.Add(this.txtScheduleId);
+            this.tabPage5.Controls.Add(this.label23);
+            this.tabPage5.Controls.Add(this.button28);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(694, 278);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Schedule";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEndDate.Location = new System.Drawing.Point(102, 141);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(572, 20);
+            this.txtEndDate.TabIndex = 66;
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStartDate.Location = new System.Drawing.Point(102, 105);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(572, 20);
+            this.txtStartDate.TabIndex = 65;
+            // 
+            // txtScheduleName
+            // 
+            this.txtScheduleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtScheduleName.Location = new System.Drawing.Point(102, 64);
+            this.txtScheduleName.Name = "txtScheduleName";
+            this.txtScheduleName.Size = new System.Drawing.Size(572, 20);
+            this.txtScheduleName.TabIndex = 64;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(21, 144);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(78, 13);
+            this.label20.TabIndex = 63;
+            this.label20.Text = "End DateTime:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(21, 107);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(81, 13);
+            this.label21.TabIndex = 62;
+            this.label21.Text = "Start DateTime:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(21, 66);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 61;
+            this.label22.Text = "Name :";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(510, 231);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(92, 23);
+            this.button23.TabIndex = 60;
+            this.button23.Text = "Disable";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(429, 231);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(75, 23);
+            this.button24.TabIndex = 59;
+            this.button24.Text = "Enable";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(348, 231);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(75, 23);
+            this.button25.TabIndex = 58;
+            this.button25.Text = "List";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(267, 231);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 23);
+            this.button26.TabIndex = 57;
+            this.button26.Text = "Delete";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(186, 231);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 56;
+            this.button27.Text = "Edit";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // txtScheduleId
+            // 
+            this.txtScheduleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtScheduleId.Location = new System.Drawing.Point(102, 24);
+            this.txtScheduleId.Name = "txtScheduleId";
+            this.txtScheduleId.Size = new System.Drawing.Size(572, 20);
+            this.txtScheduleId.TabIndex = 55;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(21, 26);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(22, 13);
+            this.label23.TabIndex = 54;
+            this.label23.Text = "Id: ";
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(104, 231);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 23);
+            this.button28.TabIndex = 53;
+            this.button28.Text = "Create";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,6 +1022,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -944,6 +1103,20 @@
         private System.Windows.Forms.TextBox txtPriorityId;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TextBox txtEndDate;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.TextBox txtScheduleName;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.TextBox txtScheduleId;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button28;
     }
 }
 
