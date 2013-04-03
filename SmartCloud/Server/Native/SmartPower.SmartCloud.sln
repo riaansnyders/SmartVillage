@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCloudUnitTest", "SmartCloudUnitTest\SmartCloudUnitTest.csproj", "{365A43E6-1F55-428F-84CA-E6137D2526E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCloudService", "SmartCloudService\SmartCloudService.csproj", "{E7DEE079-E75B-4000-A33E-5505412A8862}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SmartCloud_Setup", "SmartCloud_Setup\SmartCloud_Setup.vdproj", "{75E5A60C-AA94-4828-98AD-5267343DF338}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,28 @@ Global
 		{365A43E6-1F55-428F-84CA-E6137D2526E7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{365A43E6-1F55-428F-84CA-E6137D2526E7}.Release|x86.ActiveCfg = Release|x86
 		{365A43E6-1F55-428F-84CA-E6137D2526E7}.Release|x86.Build.0 = Release|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Debug|x86.ActiveCfg = Debug|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Debug|x86.Build.0 = Debug|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Release|Any CPU.ActiveCfg = Release|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Release|x86.ActiveCfg = Release|x86
+		{E7DEE079-E75B-4000-A33E-5505412A8862}.Release|x86.Build.0 = Release|x86
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|Any CPU.ActiveCfg = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|Any CPU.Build.0 = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|Mixed Platforms.Build.0 = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|x86.ActiveCfg = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Debug|x86.Build.0 = Debug
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|Any CPU.ActiveCfg = Release
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|Any CPU.Build.0 = Release
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|Mixed Platforms.ActiveCfg = Release
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|Mixed Platforms.Build.0 = Release
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|x86.ActiveCfg = Release
+		{75E5A60C-AA94-4828-98AD-5267343DF338}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
