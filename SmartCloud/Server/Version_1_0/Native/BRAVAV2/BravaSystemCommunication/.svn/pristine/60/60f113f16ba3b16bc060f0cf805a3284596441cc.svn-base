@@ -1,0 +1,206 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.Net.Sockets;
+
+namespace BravaSystem.Communication
+{
+    /// <summary>
+    /// Sockets Transceiver for Communications in BRAVA systems. 
+    /// </summary>
+    public class BravaSocket
+    {
+        #region private members
+        private TcpClient reqClient;
+        #endregion
+
+        #region ctors
+        public BravaSocket(BravaTransaction inTransaction, BravaConnection inConnection)
+        {
+            this.Connection = inConnection;
+            this.Transaction = inTransaction;
+        }
+        #endregion
+
+        #region public members
+        public BravaTransaction Transaction;
+        public BravaConnection Connection;
+        #endregion
+
+        #region Properties
+        public TcpClient SocketClient
+        {
+            get { return reqClient; }
+            set { reqClient = value; }
+        }
+        #endregion
+
+        #region Private Methods
+        // private methods
+        /// <summary>
+        /// Issue a request to the defined Connection Endpoint.
+        /// </summary>
+        private void SendRequest()
+        {
+            SendFrame(Transaction.RequestStream, Connection.rqStream);
+        }
+
+        /// <summary>
+        /// Get a response to a request (Act as Client)
+        /// </summary>
+        /// <returns></returns>
+        private Stream GetResponse()
+        {
+            Stream outputStr = GetFrame(Connection.rqStream);
+
+            return outputStr;
+        }
+
+        #region TCP Frames to/fro
+        /// <summary>
+        ///  Send a "frame of data" (in a stream) to the specified Network stream.
+        /// </summary>
+        /// <param name="outData"></param>
+        /// <param name="nStream"></param>
+        private void SendFrame(Stream outData, NetworkStream nStream)
+        {
+            int numberOfBytes = 0;
+            int total = 0;
+            Byte[] bytes = new Byte[256];
+
+            try
+            {
+                outData.Seek(0, SeekOrigin.Begin);
+
+                numberOfBytes = outData.Read(bytes, 0, bytes.Length);
+
+                do
+                {
+                    nStream.Write(bytes, 0, numberOfBytes);
+                    total += numberOfBytes;
+                    numberOfBytes = outData.Read(bytes, 0, bytes.Length);
+                } while (numberOfBytes > 0);
+
+                System.Diagnostics.Debug.WriteLine("Sent data! " + total.ToString() + "bytes\r\n");
+            }
+            catch (SocketException e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception BravaSockets:SendFrame: " + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Gets a frame from the specified metwork stream 
+        /// </summary>
+        /// <param name="nStream"></param>
+        /// <returns></returns>
+        private Stream GetFrame(NetworkStream nStream)
+        {
+            Byte[] bytes = new Byte[256];
+
+            int numberOfBytesRead = 0;
+            int total = 0;
+            MemoryStream data = new MemoryStream();
+            try
+            {
+                // Loop to receive all the data sent by the client.
+                do
+                {
+                    numberOfBytesRead = nStream.Read(bytes, 0, bytes.Length);
+                    data.Write(bytes, 0, numberOfBytesRead);
+                    total += numberOfBytesRead;
+                }
+                while (nStream.DataAvailable);
+
+                System.Diagnostics.Debug.WriteLine("Received data!" + total.ToString() + "bytes\r\n");
+            }
+            catch (SocketException e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception TCPSockets:GetFrame: " + e.Message);
+            }
+            return data;
+        }
+        #endregion
+
+        #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// Establish the network connection and link the network streams to Transaction object.
+        /// </summary>
+        public void OpenConnection()
+        {
+            this.Connection.Connected = false;
+            try
+            {
+
+                reqClient = new TcpClient();
+                //reqClient.ExclusiveAddressUse = false;
+                reqClient.NoDelay = true;
+                reqClient.ReceiveTimeout = 500;   // 10000
+                reqClient.SendTimeout = 500;      // 10000
+                LingerOption lingerOption = new LingerOption(false, 0);
+                // LingerOption lingerOption = new LingerOption(true, 1);
+                reqClient.LingerState = lingerOption;
+                reqClient.Connect(Connection.BravaIP, Connection.BravaPort);
+                // bind the socket and get the stream object representing it.
+                Connection.rqStream = reqClient.GetStream();
+
+                this.Connection.Connected = true;
+            }
+            catch (SocketException se)
+            {
+                throw(se);
+            }
+        }
+
+        // Perform the Transaction on the Connection specified.
+        public void DoTransaction()
+        {
+            if(this.Transaction.State != BravaTransaction.TransactionState.Ready)
+            { 
+                
+            }
+            else
+            {
+                if (this.Connection.Connected != true)
+                {
+                    OpenConnection();
+                }
+
+                SendRequest();
+
+                this.Transaction.State = BravaTransaction.TransactionState.Pending;
+ 
+                // TODO: A better timeout / wait for response methodology here.
+                System.Threading.Thread.Sleep(250);
+                //System.Threading.Thread.Sleep(500);
+
+                // Did the request get a response?
+                if (Connection.rqStream.DataAvailable)
+                {
+                    Transaction.ResponseStream = GetResponse();
+                    this.Transaction.State = BravaTransaction.TransactionState.Completed;
+                }
+                else
+                {
+                    // If there was NO response after a given interval then this transaction is not complete, it must be flagged as Failed.
+                    this.Transaction.State = BravaTransaction.TransactionState.Failed;
+                }                
+                // The network socket is left open, this must be closed as it's good etiquette and network stack management.
+                // However if there is a need to perform a ReadBackVerify then the socket should be left open.
+                if (!this.Transaction.DoReadBackVerify)
+                {
+                    this.Connection.rqStream.Close();
+                    this.Connection.Connected = false;
+                    this.Transaction.State = BravaTransaction.TransactionState.Closed;
+                }
+            }
+            
+        }
+
+        #endregion
+
+    }
+}

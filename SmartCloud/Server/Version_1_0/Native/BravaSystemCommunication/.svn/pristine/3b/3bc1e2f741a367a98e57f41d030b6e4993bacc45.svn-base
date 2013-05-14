@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLiveSiteData" targetNamespace="http://tempuri.org/dsLiveSiteData.xsd" xmlns:mstns="http://tempuri.org/dsLiveSiteData.xsd" xmlns="http://tempuri.org/dsLiveSiteData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLiveSiteData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsLiveSiteData" msprop:Generator_UserDSName="dsLiveSiteData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtSiteDataStatusView" msprop:Generator_TableClassName="dtSiteDataStatusViewDataTable" msprop:Generator_TableVarName="tabledtSiteDataStatusView" msprop:Generator_TablePropName="dtSiteDataStatusView" msprop:Generator_RowDeletingName="dtSiteDataStatusViewRowDeleting" msprop:Generator_UserTableName="dtSiteDataStatusView" msprop:Generator_RowChangingName="dtSiteDataStatusViewRowChanging" msprop:Generator_RowEvHandlerName="dtSiteDataStatusViewRowChangeEventHandler" msprop:Generator_RowDeletedName="dtSiteDataStatusViewRowDeleted" msprop:Generator_RowEvArgName="dtSiteDataStatusViewRowChangeEvent" msprop:Generator_RowChangedName="dtSiteDataStatusViewRowChanged" msprop:Generator_RowClassName="dtSiteDataStatusViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="UnitsID" msdata:Caption="Unit ID" msprop:Generator_ColumnVarNameInTable="columnUnitsID" msprop:Generator_ColumnPropNameInRow="UnitsID" msprop:Generator_ColumnPropNameInTable="UnitsIDColumn" msprop:Generator_UserColumnName="UnitsID" type="xs:int" minOccurs="0" />
+              <xs:element name="tcpipaddress" msdata:Caption="IP Address" msprop:Generator_ColumnVarNameInTable="columntcpipaddress" msprop:Generator_ColumnPropNameInRow="tcpipaddress" msprop:Generator_ColumnPropNameInTable="tcpipaddressColumn" msprop:Generator_UserColumnName="tcpipaddress" type="xs:string" minOccurs="0" />
+              <xs:element name="unitname" msdata:Caption="Unit Name" msprop:Generator_ColumnVarNameInTable="columnunitname" msprop:Generator_ColumnPropNameInRow="unitname" msprop:Generator_ColumnPropNameInTable="unitnameColumn" msprop:Generator_UserColumnName="unitname" type="xs:string" minOccurs="0" />
+              <xs:element name="switchstate1" msdata:Caption="switch1" msprop:Generator_ColumnVarNameInTable="columnswitchstate1" msprop:Generator_ColumnPropNameInRow="switchstate1" msprop:Generator_ColumnPropNameInTable="switchstate1Column" msprop:Generator_UserColumnName="switchstate1" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate2" msprop:Generator_ColumnVarNameInTable="columnswitchstate2" msprop:Generator_ColumnPropNameInRow="switchstate2" msprop:Generator_ColumnPropNameInTable="switchstate2Column" msprop:Generator_UserColumnName="switchstate2" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate3" msprop:Generator_ColumnVarNameInTable="columnswitchstate3" msprop:Generator_ColumnPropNameInRow="switchstate3" msprop:Generator_ColumnPropNameInTable="switchstate3Column" msprop:Generator_UserColumnName="switchstate3" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate4" msprop:Generator_ColumnVarNameInTable="columnswitchstate4" msprop:Generator_ColumnPropNameInRow="switchstate4" msprop:Generator_ColumnPropNameInTable="switchstate4Column" msprop:Generator_UserColumnName="switchstate4" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate5" msprop:Generator_ColumnVarNameInTable="columnswitchstate5" msprop:Generator_ColumnPropNameInRow="switchstate5" msprop:Generator_ColumnPropNameInTable="switchstate5Column" msprop:Generator_UserColumnName="switchstate5" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate6" msprop:Generator_ColumnVarNameInTable="columnswitchstate6" msprop:Generator_ColumnPropNameInRow="switchstate6" msprop:Generator_ColumnPropNameInTable="switchstate6Column" msprop:Generator_UserColumnName="switchstate6" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate7" msprop:Generator_ColumnVarNameInTable="columnswitchstate7" msprop:Generator_ColumnPropNameInRow="switchstate7" msprop:Generator_ColumnPropNameInTable="switchstate7Column" msprop:Generator_UserColumnName="switchstate7" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="switchstate8" msprop:Generator_ColumnVarNameInTable="columnswitchstate8" msprop:Generator_ColumnPropNameInRow="switchstate8" msprop:Generator_ColumnPropNameInTable="switchstate8Column" msprop:Generator_UserColumnName="switchstate8" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:dtSiteDataStatusView" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

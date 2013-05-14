@@ -1,0 +1,92 @@
+10
+
+dir
+268
+svn://fknas/svnlfa/brava/BravaSystemCommunication
+svn://fknas/svnlfa
+
+
+
+2011-07-17T08:30:22.279501Z
+265
+fkong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7fe85c23-6a4d-4bb0-bbab-8d387f1f2ed8
+
+EngineersTools
+dir
+
+BravaTransaction
+dir
+
+BravaSystemCommunication.sln
+file
+
+
+
+
+2011-07-01T07:29:53.451327Z
+dfb403c2dbbb5a8acbee6c1b1ae16fcc
+2011-07-03T13:49:34.518657Z
+234
+fkong
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7417
+
+Setup1
+dir
+
+TestApplication
+dir
+
+trunk
+dir
+
+BravaSocket
+dir
+
+branches
+dir
+
+BravaUtilities
+dir
+
+BravaConnection
+dir
+
+tags
+dir
+

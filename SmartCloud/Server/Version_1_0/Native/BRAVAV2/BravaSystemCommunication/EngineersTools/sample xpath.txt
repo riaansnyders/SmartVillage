@@ -1,0 +1,10 @@
+//*[local-name()='UnitMap']
+//*[@SwitchBankType='RESIDENT_8SW']/*[@UserName!='unused']
+//*[@SwitchBankType='GENERATOR_8SW']/*[@UserName!='unused']
+//*[local-name()='UnitDetail'][@UnitIndex='1']
+
+//*[@TCPIPAddress]
+
+//*[name()='Record' and namespace-uri()='BravaSystem.Communication'][@RecordID='8']/attribute::*
+//*[name()='Record' and namespace-uri()='BravaSystem.Communication' and @RecordID='8']/attribute::*
+//*[@Task='3' and @Function='5' and @RecordType='3' and @RecordIndex='0']/following-sibling::node()/*[@RecordID='8']

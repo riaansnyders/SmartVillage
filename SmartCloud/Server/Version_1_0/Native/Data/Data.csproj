@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F3EA3B4-1BF7-4601-9790-77AF5224D108}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lfa.pmgmt.data</RootNamespace>
+    <AssemblyName>lfa.pmgmt.data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\BusinessRule\Priority.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Condition.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Load.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Device.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\LinkedUnitDevice.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Result.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Rule.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\RuleSet.cs" />
+    <Compile Include="DTO\DAO\BusinessRule\Unit.cs" />
+    <Compile Include="DTO\DAO\Configuration\Device.cs" />
+    <Compile Include="DTO\DAO\Configuration\DeviceStatus.cs" />
+    <Compile Include="DTO\DAO\Configuration\Unit.cs" />
+    <Compile Include="DTO\DAO\Configuration\Zone.cs" />
+    <Compile Include="DTO\DAO\Eventing\DeviceEvent.cs" />
+    <Compile Include="DTO\DAO\Logging\CurrentStatus.cs" />
+    <Compile Include="DTO\DAO\Logging\Log.cs" />
+    <Compile Include="DTO\DAO\Schedule\Device.cs" />
+    <Compile Include="DTO\DAO\Schedule\Schedule.cs" />
+    <Compile Include="DTO\DAO\Schedule\Unit.cs" />
+    <Compile Include="DTO\BusinessRule\Condition.cs" />
+    <Compile Include="DTO\BusinessRule\Load.cs" />
+    <Compile Include="DTO\BusinessRule\Device.cs" />
+    <Compile Include="DTO\BusinessRule\LinkedRuleUnitDevice.cs" />
+    <Compile Include="DTO\BusinessRule\Result.cs" />
+    <Compile Include="DTO\BusinessRule\Rule.cs" />
+    <Compile Include="DTO\BusinessRule\RuleSet.cs" />
+    <Compile Include="DTO\BusinessRule\Unit.cs" />
+    <Compile Include="DTO\Configuration\LoadShedDevice.cs" />
+    <Compile Include="DTO\Configuration\Device.cs" />
+    <Compile Include="DTO\Configuration\DeviceStatus.cs" />
+    <Compile Include="DTO\Configuration\Status.cs" />
+    <Compile Include="DTO\Configuration\Unit.cs" />
+    <Compile Include="DTO\Configuration\Zone.cs" />
+    <Compile Include="DTO\DAO\Security\Device.cs" />
+    <Compile Include="DTO\DAO\Security\Role.cs" />
+    <Compile Include="DTO\DAO\Security\RolePermission.cs" />
+    <Compile Include="DTO\DAO\Security\User.cs" />
+    <Compile Include="DTO\Eventing\DeviceEvent.cs" />
+    <Compile Include="DTO\Logging\CurrentStatus.cs" />
+    <Compile Include="DTO\Logging\Log.cs" />
+    <Compile Include="DTO\Schedule\Priority.cs" />
+    <Compile Include="DTO\Schedule\Device.cs" />
+    <Compile Include="DTO\Schedule\Schedule.cs" />
+    <Compile Include="DTO\Schedule\Unit.cs" />
+    <Compile Include="DTO\Security\Device.cs" />
+    <Compile Include="DTO\Security\Role.cs" />
+    <Compile Include="DTO\Security\RolePermission.cs" />
+    <Compile Include="DTO\Security\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializer\Serializer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
