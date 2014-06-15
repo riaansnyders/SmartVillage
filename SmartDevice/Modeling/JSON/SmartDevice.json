@@ -1,0 +1,46 @@
+//*****************************************************************************
+// The model will be stored in seperate files per object / data type, example 
+// "units.json" will be a storage file with the collection of units saved for 
+// the system.
+//******************************************************************************
+
+//units.json
+ "unit"
+ {
+  "id":"1",
+  "name": "family home",
+  "dateadded": "2014-06-03",
+  "address": "123.45.67.89"
+ }
+
+//devices.json
+"device"
+{
+  "id":"1",
+  "unitid":"1",
+  "name":"Swiming pool pump",
+  "switch":"Switch1"
+}
+
+//schedules.json
+"schedule"
+{
+    "id":"1",
+	"name":"End Of Day",
+	"starttime":"23:00:00",
+	"endtime":"04:59:59",
+	"active":"true"
+}
+
+//scheduledevices.json
+"scheduledevice"
+{
+  "id":"1",
+  "scheduleid":"1",
+  "deviceid":"1",
+  "state":"on"
+}
+ 
+ 
+   
+
