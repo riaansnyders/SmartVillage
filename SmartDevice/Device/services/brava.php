@@ -1,18 +1,19 @@
 <?php
   $host = $_GET["address"];
   $switchStates = $_GET["states"];
+  
   $port = '9000';
-  $timeout = 15;  //timeout in seconds
+  $timeout = 30;  //timeout in seconds
   
   $switchOn = '0x02';
   $switchOff = '0x03';
   
   try
   {
-  $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)
+    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)
       or die("Unable to create socket\n");
 
-  socket_set_nonblock($socket)
+    socket_set_nonblock($socket)
       or die("Unable to set nonblock on socket\n");
 
     $time = time();
@@ -36,9 +37,24 @@
 	
     socket_set_block($this->socket)
       or die("Unable to set block on socket\n");
-	  
-	//Send the message to the server
-	if( ! socket_send ( $sock , $message , strlen($message) , 0))
+	 
+	$switch = explode(",",$switchStates);
+	
+	$message = str_repeat(chr(4),8);
+	
+	for ($i = 0; $i <= 8; $i++) 
+	{
+		if($switch[$i] == 'on')
+		{
+		  $message.= $switchOn;
+		}
+		else
+		{
+		   $message.= $switchOff;
+		}
+	}
+	
+	if(!socket_send ($sock , $message , strlen($message) , 0))
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -46,10 +62,7 @@
 		die("Could not send data: [$errorcode] $errormsg \n");
 	}
 
-	echo "Message send successfully \n";
-
-	//Now receive reply from server
-	if(socket_recv ( $sock , $buf , 2045 , MSG_WAITALL ) === FALSE)
+	if(socket_recv ($sock , $buf , 2045 , MSG_WAITALL ) === FALSE)
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -57,14 +70,12 @@
 		die("Could not receive data: [$errorcode] $errormsg \n");
 	}
 
-	//print the received message
-	echo $buf;
-	  
 	socket_close($socket);
+	
+	echo '{"status":"200","message":"Switch commands executed with success!"}';
   }
   catch(Exception $e)
   {
     echo '{"status":"500","message":"Failed to execute device switch state command.See more info section for details.", "more info" :'.$e->getMessage().'"}';
   }
-
 ?>
